@@ -9,5 +9,7 @@
 
   <!-- Twitter Bootstrap Framework -->
   <plone:static directory="bootstrap" name="bootstrap-framework" type="theme" />
+  <plone:static directory="foundation" name="foundation-framework" type="theme" />
+  <plone:static directory="goldilocks" name="goldilocks-framework" type="theme" />
 
 </configure>

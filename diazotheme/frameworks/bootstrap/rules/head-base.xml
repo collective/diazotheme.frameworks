@@ -35,7 +35,7 @@
 
   <!-- Links -->
   <replace css:theme="link[href*='bootstrap-responsive.css']">
-      <link href="++theme++bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+      <link href="++theme++bootstrap-framework/css/bootstrap-responsive.min.css" rel="stylesheet"/>
   </replace> 
   <replace css:theme="link[rel='shortcut icon']" css:content="link[rel='shortcut icon']" />
   <after css:theme="link[rel='shortcut icon']" css:content="link[rel='apple-touch-icon']" />
