@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+       xmlns:css="http://namespaces.plone.org/diazo/css"
+       xmlns:xhtml="http://www.w3.org/1999/xhtml"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"    
+       xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- The condition makes sure that theme is only applied when served in the 
+       plone main_template. This is necessary for functional edit popups in 
+       Tiny, for example. -->
+  <theme href="index.html" css:if-content="#visual-portal-wrapper"/>
+
+  <!-- Head rules
+       ================================================================== -->
+  <xi:include href="rules/head-base.xml"/>
+  <xi:include href="rules/head-theme.xml"/>
+
+  <!-- Body rules
+       ================================================================== -->
+  <xi:include href="rules/header-inverse.xml"/>
+  <xi:include href="rules/columns.xml"/>
+  <xi:include href="rules/content.xml"/>
+  <xi:include href="rules/forms.xml"/>
+  <xi:include href="rules/portlets.xml"/>
+  <xi:include href="rules/edit.xml"/>
+  <xi:include href="rules/footer.xml"/>
+  <xi:include href="rules/general.xml"/>
+
+  <!-- Place the content 
+       .................................................................. -->
+  <drop css:theme-children="body"/>
+  <before css:theme-children="body" css:content-children="body"/>
+  <after css:theme-children="body">
+      <script src="++theme++bootstrap/js/bootstrap.min.js"></script>
+  </after>
+  
+</rules>

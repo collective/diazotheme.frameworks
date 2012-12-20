@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <replace css:content=".managePortletsFallback">
+    <div class="span12">
+      <xsl:aooly-templates css:select=".managePortletsFallback"/>
+    </div>
+  </replace>
+
+  <replace css:content="table.listing">
+    <table class="table table-striped">
+      <xsl:apply-templates select="./*"/>
+    </table>
+  </replace>
+
+  <drop css:content="#edit-bar h5"/>
+
+  <replace css:content="#content-views">
+      <ul class="nav nav-tabs">
+          <xsl:apply-templates select="./*"/>
+      </ul>        
+  </replace>
+
+  <drop css:content=".contentActions .arrowDownAlternative"/>
+
+  <replace css:content=".actionSeparator">
+      <li class="nav-header">
+          <xsl:apply-templates select="./div/*"/>
+      </li>
+      <li class="divider"></li>
+  </replace>
+
+  <replace css:content="#edit-bar > .contentActions">
+      <div class="clearfix">
+      <xsl:for-each select="./ul/li">
+        <div class="btn-group pull-right">
+            <button class="btn">
+                <xsl:apply-templates select=".//dt/a/span"/>
+            </button>
+            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <xsl:apply-templates select=".//dd/ul/li"/>
+            </ul>
+        </div>
+      </xsl:for-each>    
+      </div>
+  </replace>
+
+  <replace css:content=".criteria .querywidget">
+    <div class="btn-group pull-left">
+      <button class="btn">
+          <xsl:apply-templates css:select=".multipleSelectionWidgetTitle"/>
+      </button>
+      <button class="btn dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+          <xsl:for-each select="./dd/*">
+            <li>
+              <xsl:apply-templates select="."/>
+            </li>
+          </xsl:for-each>
+      </ul>
+    </div>
+  </replace>
+
+  <replace css:content="form.enableFormTabbing">
+    <form>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">accordion</xsl:attribute>
+      <xsl:for-each select="./fieldset">
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse">
+                <xsl:attribute name="data-parent">#<xsl:value-of select="../@id"/></xsl:attribute>
+                <xsl:attribute name="href">#<xsl:value-of select="./@id"/></xsl:attribute>
+                <xsl:value-of select="./legend"/>
+              </a>
+            </div>
+            <div class="accordion-body collapse in">
+              <xsl:choose>
+                  <xsl:when test="position() = 1">
+                      <xsl:attribute name="class">accordion-body collapse in</xsl:attribute>
+                  </xsl:when>
+                  <xsl:otherwise>
+                      <xsl:attribute name="class">accordion-body collapse out</xsl:attribute>
+                  </xsl:otherwise>
+              </xsl:choose>
+              <xsl:copy-of select="@*" />
+              <div class="accordion-inner">
+                <xsl:apply-templates select="./*[not(self::legend)]"/>
+              </div>
+            </div>
+          </div>
+      </xsl:for-each>
+      <xsl:apply-templates select="./*[not(self::fieldset)]"/>
+    </form>
+  </replace>
+
+</rules>

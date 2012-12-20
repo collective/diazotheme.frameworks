@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- Forms -->
+  <replace css:content=".formHelp">
+      <div class="formHelp muted">
+          <xsl:apply-templates select="./*|./text()"/>
+      </div>
+  </replace>
+
+  <replace css:content="input">
+      <xsl:choose>
+          <xsl:when css:test="[type='submit']">
+              <button>
+                  <xsl:choose>
+                      <xsl:when css:test=".searchButton, .context">
+                          <xsl:attribute name="class">btn btn-primary</xsl:attribute>
+                      </xsl:when>
+                      <xsl:when css:test=".delete">
+                          <xsl:attribute name="class">btn btn-danger</xsl:attribute>
+                      </xsl:when>
+                      <xsl:otherwise>
+                          <xsl:attribute name="class">btn</xsl:attribute>
+                      </xsl:otherwise>
+                  </xsl:choose>
+                  <xsl:value-of select="./@value"/>
+              </button>
+          </xsl:when>
+          <xsl:when css:test="[type='checkbox']">
+              <input>
+                  <xsl:copy-of select="@*" />
+                  <xsl:attribute name="class">pull-left</xsl:attribute>
+              </input>
+          </xsl:when>
+          <xsl:otherwise>
+              <xsl:copy-of select="."/>
+          </xsl:otherwise>
+      </xsl:choose>
+  </replace>
+
+  <rules css:if-content="body.template-search">
+      <replace css:content=".actionMenu">
+          <div class="btn-group">
+              <button class="btn">
+                  <xsl:value-of select="./dt/a"/>
+              </button>
+              <button class="btn dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu nav-list">
+                  <xsl:for-each select="./dd//fieldset">
+                      <li class="nav-header"><xsl:value-of select="./legend"/></li>
+                      <li class="divider"></li>
+                      <xsl:for-each select="./div//input[@type='checkbox']">
+                          <li>
+                              <label>
+                                  <xsl:attribute name="for">
+                                      <xsl:value-of select="following-sibling::label/@for"/>
+                                  </xsl:attribute>
+                                  <xsl:attribute name="class">checkbox</xsl:attribute> 
+                                  <xsl:copy-of select="."/>
+                                  <xsl:value-of select="following-sibling::label/text()"/>
+                              </label>
+                          </li>
+                      </xsl:for-each>
+                      <xsl:for-each select="./div//input[@type='radio']">
+                          <li>
+                              <label>
+                                  <xsl:attribute name="for">
+                                      <xsl:value-of select="following-sibling::label/@for"/>
+                                  </xsl:attribute>
+                                  <xsl:attribute name="class">radio</xsl:attribute> 
+                                  <xsl:copy-of select="."/>
+                                  <xsl:value-of select="following-sibling::label/text()"/>
+                              </label>
+                          </li>
+                      </xsl:for-each>
+                  </xsl:for-each>
+                  <li class="divider"></li>
+                  <li>
+                      <button class="btn btn-primary">
+                          <xsl:value-of select=".//input[@type='submit']/@value"/>
+                      </button>
+                  </li>
+              </ul>
+          </div>
+      </replace>
+      <replace css:content="#searchResultsSort">
+          <div class="clearfix">
+              <xsl:copy-of select="."/>
+          </div>
+          <hr/>
+      </replace>
+  </rules>
+
+</rules>

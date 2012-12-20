@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <replace css:content="#portal-footer-wrapper">
+      <footer id="portal-footer-wrapper">
+          <div class="container">
+              <div class="row muted">
+                  <xsl:apply-templates select="./*"/>
+              </div>
+          </div>          
+      </footer>
+  </replace>
+  <replace css:content="#portal-colophon">
+      <div class="navbar">
+          <div class="navbar-inner">
+              <a class="brand">
+                  <xsl:copy-of select=".//a[1]/@*"/>
+                  <xsl:value-of select=".//a[1]/text()"/>
+              </a>
+              <ul class="nav pull-right">
+                  <xsl:apply-templates select="../ul[1]/li"/>
+              </ul>
+          </div>
+      </div>
+  </replace>
+  <drop css:content="#portal-siteactions"/>
+
+</rules>

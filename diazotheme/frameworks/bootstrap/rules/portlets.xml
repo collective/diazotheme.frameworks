@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <replace css:content=".portlet">
+      <xsl:if css:test=".portletHeader">
+          <h2><xsl:apply-templates css:select=".portletHeader > *"/></h2>
+      </xsl:if>
+      <ul class="nav nav-list">
+          <xsl:for-each css:select=".portletItem">
+              <li>
+                  <xsl:apply-templates select="./*"/>
+              </li>
+          </xsl:for-each>
+      </ul>
+      <xsl:if css:test=".portletFooter">
+          <footer>
+              <small>
+                  <xsl:apply-templates css:select=".portletFooter"/>
+              </small>
+          </footer>
+      </xsl:if>
+      <hr/>
+  </replace>
+  
+  <replace css:content=".portletNews, .portletEvents">
+      <h2><xsl:apply-templates css:select=".portletHeader > *"/></h2>
+      <ul class="nav nav-list">
+          <xsl:for-each css:select=".portletItem">
+              <li>
+                  <a>
+                      <xsl:copy-of select="./a/@*" />
+                      <xsl:value-of select="./a/text()"/>
+                      <small class="muted">
+                          <xsl:copy-of select="./span"/>
+                      </small>
+                  </a>
+              </li>
+          </xsl:for-each>
+      </ul>
+      <xsl:if css:test=".portletFooter">
+          <footer>
+              <small>
+                  <xsl:apply-templates css:select=".portletFooter"/>
+              </small>
+          </footer>
+      </xsl:if>
+      <hr/>
+  </replace>
+  
+  <replace css:content=".portletNavigationTree">
+      <div class="well">
+          <ul class="nav nav-list navTree navTreeLevel0">
+              <xsl:if css:test=".portletHeader">
+                  <li class="list-header"><xsl:apply-templates css:select=".portletHeader > *"/></li>
+                  <li class="divider"></li>
+              </xsl:if>
+              <xsl:apply-templates select="./dd/ul/*"/>
+              <xsl:if css:test=".portletFooter">
+                  <li class="divider"></li>
+                  <li><xsl:apply-templates css:select=".portletFooter > *"/></li>
+              </xsl:if>
+          </ul>
+      </div>
+  </replace>
+
+  <replace css:content=".portletStaticText">
+      <div class="well">
+          <xsl:if css:test=".portletHeader">
+              <h2><xsl:apply-templates css:select=".portletHeader > *"/></h2>
+          </xsl:if>
+          <xsl:apply-templates css:select=".portletItem"/>
+          <xsl:apply-templates css:select="div.portletStaticText > *"/>
+          <xsl:if css:test=".portletFooter">
+              <footer><xsl:apply-templates css:select=".portletFooter"/></footer>
+          </xsl:if>
+      </div>
+  </replace>
+
+  <replace css:content=".portletCalendar">
+      <h2 class="calendarHeader">
+          <xsl:apply-templates css:select="#calendar-previous"/>
+          <xsl:apply-templates select=".//caption/text()" />
+          <xsl:apply-templates css:select="#calendar-next"/>
+      </h2>
+      <table class="ploneCalendar table table-hover table-condensed" summary="Calendar">
+          <xsl:apply-templates select=".//thead" />
+          <tbody class="table-bordered">
+              <xsl:apply-templates select=".//tbody/tr" />
+          </tbody>
+      </table>
+      <hr/>
+  </replace>
+
+  <replace css:content=".portletWrapper">
+      <article>
+          <xsl:apply-templates select="./*" />
+      </article>
+  </replace>
+
+  <strip css:content=".portletHeader"/>
+  <strip css:content=".portletLogin br"/>
+  <strip css:content="span[class*='portlet']"/>
+  <strip css:content=".portletItem"/>
+  <strip css:content=".portletFooter"/>
+  
+  <replace css:content="span.portletItemDetails">
+      <small class="portletItemDetails muted">
+          <xsl:apply-templates select="./text()" />
+      </small>
+  </replace>
+
+</rules>

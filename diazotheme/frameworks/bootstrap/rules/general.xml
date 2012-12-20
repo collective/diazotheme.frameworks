@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <strip css:content="#visual-portal-wrapper"/>
+
+  <replace css:content=".visualClear">
+      <div class="clearfix">
+          <xsl:apply-templates select="./text()" />
+      </div>
+  </replace>
+  
+  <strip css:content=".portalMessage dd"/>
+  <replace css:content=".portalMessage" >
+    <xsl:choose>
+        <xsl:when css:test=".portalMessage[style]"/>
+        <xsl:when css:test=".portalMessage.info">
+            <div class="alert alert-block alert-info">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <h4><xsl:apply-templates select="./dt/*"/></h4>
+                <xsl:apply-templates select="./*"/>
+            </div>                
+        </xsl:when>
+        <xsl:when css:test=".portalMessage.error">
+            <div class="alert alert-block alert-error">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <h4><xsl:apply-templates select="./dt/*"/></h4>
+                <xsl:apply-templates select="./*"/>
+            </div>
+        </xsl:when>      
+        <xsl:when css:test=".portalMessage.success">
+            <div class="alert alert-block alert-warning">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <h4><xsl:apply-templates select="./dt/*"/></h4>
+                <xsl:apply-templates select="./*"/>
+            </div>
+        </xsl:when>      
+        <xsl:otherwise>
+            <div class="alert alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <h4><xsl:apply-templates select="./dt/*"/></h4>
+                <xsl:apply-templates select="./*"/>
+            </div>  
+        </xsl:otherwise>
+    </xsl:choose>
+  </replace>
+
+  <replace css:content=".configlets">
+    <ul class="nav nav-list">
+      <xsl:apply-templates select="./*"/>
+    </ul>
+  </replace>
+
+</rules>
