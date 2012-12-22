@@ -8,8 +8,23 @@
   <five:registerPackage package="." />
 
   <!-- Twitter Bootstrap Framework -->
-  <plone:static directory="bootstrap" name="bootstrap-framework" type="theme" />
-  <plone:static directory="foundation" name="foundation-framework" type="theme" />
-  <plone:static directory="goldilocks" name="goldilocks-framework" type="theme" />
+  <plone:static directory="bootstrap" 
+                name="bootstrap-framework" type="theme" />
+  <plone:static directory="bootstrap/examples/hero" 
+                name="bootstrap-hero" type="theme" />
+  <plone:static directory="bootstrap/examples/marketing-narrow" 
+                name="bootstrap-marketing-narrow" type="theme" />
+
+  <!-- Foundation Framework -->
+  <plone:static directory="foundation" 
+                name="foundation-framework" type="theme" />
+
+  <!-- Goldilocks Framework -->
+  <plone:static directory="goldilocks" 
+                name="goldilocks-framework" type="theme" />
+
+  <!-- Plone Utils -->
+  <plone:static directory="plone" 
+                name="plone-utils" type="theme" />
 
 </configure>

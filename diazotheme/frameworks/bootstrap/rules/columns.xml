@@ -4,42 +4,12 @@
          xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
          xmlns:xi="http://www.w3.org/2001/XInclude">
 
-  
-  <replace css:content=".width-full">
-      <div class="span12">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' width-1:2 ')]">
-      <div class="span6">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' width-1:3 ')]">
-      <div class="span4">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' width-2:3 ')]">
-      <div class="span8">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' width-1:4 ')]">
-      <div class="span3">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' width-3:4 ')]">
-      <div class="span9">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
   <replace content="//*[@id='portal-column-one']|//*[@id='portal-column-two']">
       <aside class="span3">
           <xsl:apply-templates select="./*"/>
       </aside>
   </replace>
+
   <replace content="//*[@id='portal-column-content']">
       <article>
           <xsl:choose>
@@ -56,68 +26,5 @@
           <xsl:apply-templates select="./*"/>
       </article>
   </replace>
-  
-  <!-- Numbered columns are not used in Sunburst, they are here just in case
-  <replace css:content=".width-1">
-      <div class="span1">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace css:content=".width-2">
-      <div class="span2">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace css:content=".width-3">
-      <div class="span3">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace css:content=".width-4">
-      <div class="span4">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace css:content=".width-5">
-      <div class="span5">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace css:content=".width-6">
-      <div class="span6">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace css:content=".width-7">
-      <div class="span7">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace css:content=".width-8">
-      <div class="span8">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace css:content=".width-9">
-      <div class="span9">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace css:content=".width-10">
-      <div class="span10">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace css:content=".width-11">
-      <div class="span11">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  <replace css:content=".width-12">
-      <div class="span12">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
-  -->
 
 </rules>

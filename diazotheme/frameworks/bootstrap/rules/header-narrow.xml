@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <replace css:content="#portal-top">
+      <section class="masthead">
+          <ul class="nav nav-pills pull-right">
+              <xsl:apply-templates select=".//*[@id='portal-globalnav']/li"/>
+          </ul>
+          <xsl:apply-templates css:select="#portal-logo"/>    
+      </section>
+      <hr/>
+                          <!-- 
+      <section class="navbar navbar-fixed-top">
+          <div class="navbar-inner">
+              <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </a>
+                  <div class="nav-collapse collapse">
+                      <ul class="nav">
+                      </ul>
+                      <xsl:apply-templates select=".//*[@id='portal-personaltools-wrapper']/*"/>
+                      <form class="navbar-search pull-right">
+                          <xsl:copy-of select=".//*[@id='portal-searchbox']/form/@*" />
+                          <input class="search-query">
+                              <xsl:copy-of select=".//input[@id='searchGadget']/@*[local-name() != 'class']"/>
+                          </input>
+                          <label for="searchbox_currentfolder_only"  id="searchbox_currentfolder_only_label" class="checkbox pull-right">
+                            <xsl:apply-templates select=".//input[@id='searchbox_currentfolder_only']"/>
+                            <xsl:apply-templates select=".//label[@for='searchbox_currentfolder_only']/text()"/>
+                          </label>
+                      </form>
+                  </div>
+              </div>
+          </div>  
+      </section>
+      <header id="portal-top">
+          <div class="container">
+              <div class="row">
+                  <xsl:apply-templates select="./*"/>
+              </div>
+          </div>          
+      </header>
+                              -->
+  </replace>
+
+  <replace content="//*[@class='selected']/@class">
+      <xsl:attribute name="class">active</xsl:attribute>
+  </replace>
+
+</rules>

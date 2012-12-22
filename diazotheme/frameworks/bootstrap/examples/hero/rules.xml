@@ -21,7 +21,7 @@
   <xi:include href="++theme++bootstrap-framework/rules/header-inverse.xml"/>
   <xi:include href="++theme++bootstrap-framework/rules/grid.xml"/>
   <xi:include href="++theme++bootstrap-framework/rules/columns.xml"/>
-  <xi:include href="++theme++bootstrap-framework/rules/lead.xml"/>
+  <xi:include href="++theme++bootstrap-framework/rules/lead-hero.xml"/>
   <xi:include href="++theme++bootstrap-framework/rules/content.xml"/>
   <xi:include href="++theme++bootstrap-framework/rules/forms.xml"/>
   <xi:include href="++theme++bootstrap-framework/rules/portlets.xml"/>

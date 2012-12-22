@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+ <rules if-content="//body[contains(@class, 'section-')] and not(//*[@id='breadcrumbs-1'])">
+      <replace css:content="#portal-columns" method="raw">
+          <div class="jumbotron">
+              <xsl:copy-of css:select="#viewlet-above-content-title"/>
+              <xsl:copy-of css:select=".documentFirstHeading"/>
+              <xsl:copy-of css:select="#viewlet-below-content-title"/>
+              <p class="lead"><xsl:copy-of select="//*[@class='documentDescription']/text()"/></p>
+              <xsl:if test="//a[@id='personaltools-login']">
+                  <a class="btn btn-large btn-success">
+                      <xsl:copy-of select="//a[@id='personaltools-login']/@*[not(local-name() = 'class')]"/>
+                      <xsl:copy-of select="//a[@id='personaltools-login']/*|//a[@id='personaltools-login']/text()"/>
+                  </a>
+              </xsl:if>
+          </div>
+          <hr/>
+          <section class="row-fluid marketing">
+              <article class="span12">
+                  <xsl:apply-templates select="//*[@id='portal-column-content']/*"/>
+              </article>
+          </section>
+          
+          <xsl:choose>
+              <xsl:when test="//*[@id='portal-column-one'] and not(//*[@id='portal-column-one'])">
+                  <hr />
+                  <aside class="row-fluid marketing">
+                      <div class="span12">
+                          <xsl:apply-templates select="//*[@id='portal-column-one']/*"/>
+                      </div>
+                  </aside>
+              </xsl:when>
+              <xsl:when test="not(//*[@id='portal-column-one']) and //*[@id='portal-column-two']">
+                  <hr />
+                  <aside class="row-fluid marketing">
+                      <div class="span12">
+                          <xsl:apply-templates select="//*[@id='portal-column-two']/*"/>
+                      </div>
+                  </aside>
+              </xsl:when>
+              <xsl:when test="//*[@id='portal-column-one'] and //*[@id='portal-column-two']">
+                  <hr />
+                  <aside class="row-fluid marketing">
+                      <div class="span6">
+                          <xsl:apply-templates select="//*[@id='portal-column-one']/*"/>
+                      </div>
+                      <div class="span6">
+                          <xsl:apply-templates select="//*[@id='portal-column-two']/*"/>
+                      </div>
+                  </aside>
+              </xsl:when>
+          </xsl:choose>
+      </replace>
+      <drop css:content=".documentFirstHeading"/>
+      <drop css:content=".documentDescription"/>
+      <drop css:content="#viewlet-above-content-title"/>
+      <drop css:content="#viewlet-below-content-title"/>
+  </rules>
+
+  <rules css:if-content="body:not([class*=section-]), body[class*=section-] #breadcrumbs-1">
+      <replace css:content="#portal-columns">
+          <section id="portal-columns">
+              <div class="container">
+                  <div class="row">
+                      <xsl:apply-templates select="./*"/>
+                  </div>
+              </div>          
+          </section>
+      </replace>
+      <replace css:content=".documentFirstHeading">
+          <h1>
+              <xsl:apply-templates select="./text()|./*"/>
+          </h1>
+      </replace>
+      <replace css:content=".documentDescription">
+          <p class="lead">
+              <xsl:apply-templates select="./text()"/>
+          </p>
+      </replace>
+  </rules>
+
+</rules>
