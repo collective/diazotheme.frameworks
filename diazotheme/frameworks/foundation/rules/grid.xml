@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- Grid -->
+  <replace css:content=".width-full">
+    <div class="twelve columns">
+      <xsl:apply-templates select="./*"/>
+    </div>
+  </replace>
+  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' width-1:2 ')]">
+    <div class="six columns">
+      <xsl:apply-templates select="./*"/>
+    </div>
+  </replace>
+  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' width-1:3 ')]">
+    <div class="four columns">
+      <xsl:apply-templates select="./*"/>
+    </div>
+  </replace>
+  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' width-2:3 ')]">
+    <div class="eight columns">
+      <xsl:apply-templates select="./*"/>
+    </div>
+  </replace>
+  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' width-1:4 ')]">
+    <div class="three columns">
+      <xsl:apply-templates select="./*"/>
+    </div>
+  </replace>
+  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' width-3:4 ')]">
+    <div class="nine columns">
+      <xsl:apply-templates select="./*"/>
+    </div>
+  </replace>
+
+</rules>

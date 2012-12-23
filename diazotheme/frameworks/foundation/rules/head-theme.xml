@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- Style -->
+  <after css:theme-children="head">
+<style>
+    .ploneCalendar { width: 100%;  }
+    .ploneCalendar th, .ploneCalendar td { padding: 4px; text-align: right; }
+    .calendarHeader { text-align: center; }
+    #calendar-previous { float: left; }
+    #calendar-next { float: right; }
+    #visual-portal-wrapper > footer { background-color: #eee; box-shadow: 0 8px 12px -12px #222 inset; text-align: center; }
+    #visual-portal-wrapper > header { background-color: #222; box-shadow: 0 8px 12px -12px #222; text-align: center; }
+    #portal-columns input[type='checkbox'], #portal-columns input[type='radio'] { float: left; position: relative; top: -4px; }
+    header form { margin-top: 12px; margin-bottom: -12px; }
+</style>
+  </after>
+
+</rules>

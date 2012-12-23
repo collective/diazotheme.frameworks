@@ -22,6 +22,8 @@
   <!-- Goldilocks Framework -->
   <plone:static directory="goldilocks" 
                 name="goldilocks-framework" type="theme" />
+  <plone:static directory="goldilocks/examples/black" 
+                name="goldilocks-black" type="theme" />
 
   <!-- Plone Utils -->
   <plone:static directory="plone" 

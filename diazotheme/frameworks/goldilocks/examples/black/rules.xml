@@ -14,8 +14,19 @@
   <xi:include href="++theme++goldilocks-framework/rules/head-base.xml"/>
   <xi:include href="++theme++goldilocks-framework/rules/head-theme.xml"/>
 
+  <after css:theme-children="head">
+<style>
+    body, input, select, textarea { background-color: #000; color: #ccc; }
+    #portal-logo { background-color: #000; }
+</style>
+  </after>
+
   <!-- Body rules
        ================================================================== -->
+  <replace css:content="#portal-logo > img">
+    <img src="/++theme++goldilocks-framework/plone-white.png" height="32" width="123" alt="Plone" />
+  </replace>
+
   <xi:include href="++theme++goldilocks-framework/rules/clean.xml"/>
 
   <!-- Move the content body over to the theme side -->

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- Header -->
+  <replace css:content="#portal-top">
+    <header>
+      <div class="row">
+        <div class="twelve columns">
+          <nav class="top-bar">
+            <section>
+              <!-- Left Nav Section -->
+              <ul class="left">
+                <xsl:for-each css:select="#portal-globalnav li">
+                  <xsl:choose>
+                    <xsl:when css:test=".selected">
+                      <li class="active"><xsl:apply-templates css:select="a"/></li>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <li><xsl:apply-templates css:select="a"/></li>
+                    </xsl:otherwise>
+                  </xsl:choose>
+                </xsl:for-each>
+              </ul>
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li class="divider show-for-medium-and-up"></li>
+                <xsl:choose>
+                  <xsl:when css:test="dl#portal-personaltools">
+                    <li><xsl:apply-templates css:select="#personaltools-logout"/> </li>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <li><xsl:apply-templates css:select="#portal-personaltools a"/></li>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </ul>
+            </section>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+          <div class="three columns">
+              <xsl:apply-templates css:select="#portal-logo"/>
+          </div>
+          <div class="nine columns">
+              <xsl:apply-templates css:select="#portal-searchbox > form"/>
+          </div>
+      </div>          
+      <hr />
+    </header>
+  </replace>
+  <replace css:content="#portal-searchbox .LSBox">
+    <div class="row collapse">
+      <div class="ten mobile-three columns">
+        <xsl:apply-templates css:select="#searchGadget"/>
+        <label>
+          <xsl:attribute name="for"><xsl:value-of select="./div[1]/input[1]/@id"/></xsl:attribute>
+          <xsl:attribute name="class">left</xsl:attribute>
+          <xsl:apply-templates select="./div[1]/input[1]"/>
+          <xsl:value-of select="./div[1]/label[1]/text()"/>
+        </label>
+      </div>
+      <div class="two mobile-one columns">
+        <button class="button expand postfix">         
+            <xsl:value-of select="./input[2]/@value"/>
+        </button>
+      </div>
+    </div>
+  </replace>
+  <replace css:content="#portal-logo img">
+      <img src="++theme++foundation-framework/logo.png" height="48" alt="Plone"/>
+  </replace>
+
+</rules>

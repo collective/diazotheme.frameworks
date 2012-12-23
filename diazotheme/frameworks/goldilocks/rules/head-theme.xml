@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- The css included here you would normally include in your own files and
+       add to the theme html. In order to not adapt downloaded framework files
+       in this case they've been added through this rules file. -->
+  <after css:theme-children="head">
+<style>
+    input, select, textarea { border: 1px solid #666;  -webkit-border-radius: .25em; -moz-border-radius: .25em; border-radius: .25em; padding: .25em }
+    a { text-decoration: none; }
+    h1 { font-size: 2.618em; line-height: 1.2em; }  
+    h2 { font-size: 1.918em; line-height: 1.2em; }  
+    h3 { text-transform:uppercase; letter-spacing:0.12em; }
+    h3, h4, h5, h6 { font-weight: bold; }
+    .documentDescription, .portletHeader { font-size: 1.309em; margin-bottom: 1em; }
+    .portletHeader { border-bottom: 1px solid #666; margin: 1em 0; padding: 1em 0; text-align: center; }
+    .portletHeader a { text-decoration: none; }
+    .portletItem, .portletFooter { padding: 0 1em; }
+    .portletCalendar table { width: 100%; text-align: right; }
+    
+    /* Layout */
+    #portal-top, #portal-footer-wrapper { border-top: 1px solid #666; border-bottom: 1px solid #666; text-align: center; }
+    #portal-top { position: relative; margin: 1em 0 3em; padding: 3em 0; }
+    #portal-logo { background-color: #fff; margin-left: -7.5em; position: absolute; top: -20px; width: 15em; }
+    #portal-logo img { opacity: .7; }
+    #portal-logo:hover img { opacity: 1; }
+    #portal-searchbox { position: absolute; bottom: -0.8em; width: 100%; }
+    #searchGadget { -webkit-border-radius: 2.5em; -moz-border-radius: 2.5em; border-radius: 2.5em; border: 1px solid #666; padding: .3em .75em .2em; width: 20em; }
+    #portal-globalnav { margin: 0; font-size: 1.309em; width: 100%;  max-width: 100% }
+    #portal-globalnav a { padding: 0 1.618em; }
+    .selected a:hover, a:hover { color: #fff; }
+    .selected a { color: #ccc; }
+    #portal-breadcrumbs { margin-bottom: 3em; text-decoration: none; }
+    #portal-footer-wrapper { margin: 0 0 3em; padding: 1em; position: relative; }
+    #portal-footer, #portal-colophon, #portal-siteactions { width: 100%; text-align: center;}
+    #portal-footer p, #portal-colophon ul, #portal-siteactions { margin: 1em auto;}
+    #portal-footer-wrapper li, #portal-globalnav li { display: inline; }
+    #portal-footer-wrapper a, #portal-globalnav a { text-decoration: none; }
+    #portal-footer-wrapper li a { padding: 0 0 0 1.618em; }
+    
+    /* Columns */
+    #visual-portal-wrapper { padding: 1.618em; margin: 0 auto; max-width: 60em; min-width: 15em;  }
+    #portal-column-content { width: 28em; padding: 0 1em 3em; }
+    #portal-column-one, #portal-column-two { width: 13em; padding: 0 1em 3em; }
+    #portal-column-content, #portal-column-two, #portal-column-one { float: left; }
+    #portal-footer-wrapper { clear: both; overflow: hidden; }
+    
+    @media screen and (min-width: 48.236em) and (max-width: 63.236em) {
+        #visual-portal-wrapper { max-width: 45em; }
+        #portal-column-two, #portal-column-one { float: right; }
+    }
+    
+    @media screen and (min-width: 33.236em) and (max-width: 48.236em)  {
+        #visual-portal-wrapper { max-width: 30em; }
+    }
+    
+    @media screen and (max-width: 33.236em)  {
+        #portal-column-content, #portal-column-two, #portal-column-one { float: none; max-width: 30em; width: auto; }
+        #portal-globalnav a { display: block; width: auto; }
+    }
+</style>
+  </after>
+
+</rules>

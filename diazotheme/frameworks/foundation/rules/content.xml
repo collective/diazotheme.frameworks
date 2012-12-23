@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+  
+  <replace css:content=".documentDescription">
+    <h5 class="subheader">
+      <xsl:apply-templates select="./text()|./*"/>
+    </h5>
+  </replace>
+
+  <!-- Breadcrumbs -->
+  <drop css:content="#portal-breadcrumbs"/>
+  <rules css:if-content="#breadcrumbs-1">
+      <replace css:content="#viewlet-below-content" method="raw">
+          <div id="#viewlet-below-content">
+            <ul class="breadcrumbs">
+                <xsl:for-each select="..//div[@id='portal-breadcrumbs']/span/*">
+                  <xsl:if css:test=":not(.breadcrumbSeparator)">
+                    <li>
+                      <xsl:copy-of select="."/>
+                    </li>
+                  </xsl:if>
+                </xsl:for-each>
+            </ul>
+          </div>
+      </replace>     
+  </rules>
+  
+  <!-- Forms -->
+  <replace css:content=".formHelp">
+      <p class="formHelp">
+          <xsl:apply-templates select="./*|./text()"/>
+      </p>
+  </replace>
+  <replace css:content="input[type='submit']">
+    <button class="button"><xsl:value-of select="./@value"/></button>
+  </replace>
+  
+  <replace css:content=".visualClear">
+      <div class="clearfix">
+          <xsl:apply-templates select="./text()" />
+      </div>
+  </replace>
+
+</rules>

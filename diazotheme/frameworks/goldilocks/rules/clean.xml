@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- Clean -->
+  <drop css:content="#portal-personaltools-wrapper"/>
+  <drop css:content=".hiddenStructure"/>
+  <drop css:content=".searchButton"/>
+  <drop css:content=".searchSection"/>
+  <drop css:content=".LSResult"/>
+  <drop css:content=".documentByLine"/>
+  <drop css:content=".actionMenuContent"/>
+  <drop css:content="#edit-bar"/>
+  <drop css:content="#plone-lock-status"/>
+  <drop css:content=".documentAuthor"/>
+  <drop css:content=".documentModified"/>
+  <drop css:content=".contentHistory"/>
+  <drop css:content=".portletRecent"/>
+  <drop css:content=".managePortletsLink"/>
+  <drop css:content=".managePortletsFallback"/>
+
+  <strip css:content=".LSBox"/>
+  <strip css:content=".documentEditable"/>
+
+</rules>

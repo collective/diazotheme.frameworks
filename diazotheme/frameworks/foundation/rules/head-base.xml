@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- Head rules
+       ================================================================== -->
+  <!-- Create conditional comment IE detection -->
+  <before css:theme="html">
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> </before>
+
+<!-- Normally you would include the end of the conditional statement below here
+     but since the html files included in the download already had the 
+     conditionals around the html tag, you just need to insert the comments 
+     outside of the html tag, because they get stripped by diazo. -->
+<!--   <before css:theme-children="html"> -->
+<!--<![endif]-->
+<!--   </before> -->
+
+  <!-- Attributes -->
+  <copy attributes="*" css:theme="html" css:content="html"/>
+  <copy attributes="*" css:theme="body" css:content="body"/>
+
+  <!-- Pull in Plone Meta -->
+  <before css:theme="title" css:content="meta" />
+
+  <!-- Base tag -->
+  <before css:theme-children="head" css:content="base"/>
+
+  <!-- Title -->
+  <replace css:theme="title" css:content="title" />
+
+  <!-- Get Plone favicons and touch icons. -->
+  <after css:theme="title" css:content="link[rel='shortcut icon']" />
+  <after css:theme="title" css:content="link[rel='apple-touch-icon']" />
+
+  <!-- Framework -->
+  <replace css:theme="link[href*='foundation.min.css']">
+      <link href="++theme++foundation-framework/stylesheets/foundation.min.css" 
+            rel="stylesheet"/>
+  </replace>
+  <replace css:theme="script[src*='foundation.js']">
+      <link href="++theme++foundation-framework/javascripts/modernizr.foundation.js" 
+            rel="stylesheet"/>
+  </replace>
+
+</rules>

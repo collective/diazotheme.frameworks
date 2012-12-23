@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- Columns -->
+  <replace content="//*[@id='portal-column-content' and contains(@class, 'width-3:4') and contains(@class, 'position-1:4')]">
+      <div class="nine columns push-three">
+          <xsl:apply-templates select="./*"/>
+      </div>
+  </replace>
+  <replace content="//*[@id='portal-column-content' and contains(@class, 'width-1:2') and contains(@class, 'position-1:4')]">
+      <div class="six columns push-three">
+          <xsl:apply-templates select="./*"/>
+      </div>
+  </replace>
+  <replace css:content="#portal-column-one:last-child">
+      <div class="three columns pull-nine">
+          <xsl:apply-templates select="./*"/>
+      </div>
+  </replace>
+  <replace css:content="#portal-column-one:not(:last-child)">
+      <div class="three columns pull-six mobile-two">
+          <xsl:apply-templates select="./*"/>
+      </div>
+  </replace>
+  <replace css:content="#portal-column-two:nth-child(3)">
+      <div class="three columns mobile-two">
+          <xsl:apply-templates select="./*"/>
+      </div>
+  </replace>
+
+</rules>

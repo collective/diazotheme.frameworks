@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- Footer -->
+  <replace css:content="#portal-footer-wrapper">
+    <footer>
+      <hr />
+      <div class="row">
+          <div class="twelve columns">
+              <xsl:apply-templates css:select="#portal-footer > *"/>
+          </div>
+          <div class="three columns mobile-two">
+              <xsl:apply-templates css:select="#portal-colophon a"/>
+          </div>
+          <div class="nine columns mobile-two">
+              <ul class="link-list right">
+                  <xsl:apply-templates css:select="#portal-siteactions > li"/>
+              </ul>
+          </div>
+      </div>
+    </footer>
+    <xsl:apply-templates select="./script"/>
+  </replace>
+
+</rules>
