@@ -68,8 +68,6 @@
       </div>
     </div>
   </replace>
-  <replace css:content="#portal-logo img">
-      <img src="++theme++foundation-framework/logo.png" height="48" alt="Plone"/>
-  </replace>
+  <xi:include href="++theme++plone/rules/logo/white-48.xml"/>
 
 </rules>

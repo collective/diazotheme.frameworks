@@ -8,7 +8,7 @@
   <after css:theme-children="head">
 <style>
     .top-nav { height: auto; }
-    .top-nav form { margin-bottom: 0; }
+    .top-nav form { margin-bottom: 0; position: relative; top: 1em; }
     .top-bar ul > li.divider,
     .top-bar ul > li.active:not(.name) { background-color: rgba(120, 120, 120, .1); }
     .top-bar ul > li:hover:not(.name) { background-color: rgba(120, 120, 120, .2) !important; } 
