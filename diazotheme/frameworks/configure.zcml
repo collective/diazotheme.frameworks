@@ -26,7 +26,6 @@
                 name="goldilocks-black" type="theme" />
 
   <!-- Plone Utils -->
-  <plone:static directory="plone" 
-                name="plone-utils" type="theme" />
+  <plone:static directory="plone" name="plone" type="theme"/>
 
 </configure>

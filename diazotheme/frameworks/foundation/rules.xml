@@ -22,7 +22,9 @@
   <xi:include href="++theme++foundation-framework/rules/portlets.xml"/>
   <xi:include href="++theme++foundation-framework/rules/content.xml"/>
   <xi:include href="++theme++foundation-framework/rules/footer.xml"/>
-  <xi:include href="++theme++foundation-framework/rules/no-edit.xml"/>
+
+  <!-- Strip edit fixtures -->
+  <xi:include href="++theme++plone/rules/utility/clean.xml"/>
 
   <!-- Copy over the content -->
   <replace css:theme="body" css:content="body" />

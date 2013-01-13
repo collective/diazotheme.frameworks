@@ -8,23 +8,22 @@
   <!-- The condition makes sure that theme is only applied when served in the 
        plone main_template. This is necessary for functional edit popups in 
        Tiny, for example. -->
-  <theme href="++theme++goldilocks-framework/index.html"
-         css:if-content="#visual-portal-wrapper"/>
+  <theme href="index.html" css:if-content="#visual-portal-wrapper"/>
 
-  <xi:include href="++theme++goldilocks-framework/rules/head-base.xml"/>
-  <xi:include href="++theme++goldilocks-framework/rules/head-theme.xml"/>
+  <!-- Head rules
+       ================================================================== -->
+  <xi:include href="++theme++plone/rules/head/ie-classes.xml"/>
+  <xi:include href="++theme++plone/rules/head/base.xml"/>
+  <xi:include href="++theme++plone/rules/head/theme.xml"/>
+  <xi:include href="++theme++plone/rules/head/icons.xml"/>
 
   <!-- Body rules
        ================================================================== -->
 
   <!-- Change the logo in content and the copy the portal-top children -->
-  <xi:include href="++theme++plone/rules/logo/default-32.xml"/>
+  <xi:include href="++theme++plone/rules/logo/default-56.xml"/>
 
-  <!-- Strip edit fixtures -->
-  <xi:include href="++theme++plone/rules/utility/clean.xml"/>
-
-  <!-- Move the content body over to the theme side -->
+  <!-- Copy over the content -->
+  <replace css:theme="body" css:content="body" />
   
-  <replace css:theme="body" css:content="body"/>
-
 </rules>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <replace css:content="#portal-logo > img">
+    <img>
+      <xsl:attribute name="src">/++theme++plone/img/white/logo-192.png</xsl:attribute>
+      <xsl:attribute name="width">736</xsl:attribute>
+      <xsl:attribute name="height">192</xsl:attribute>
+      <xsl:attribute name="title">
+        <xsl:value-of select="./@title"/>
+      </xsl:attribute>
+      <xsl:attribute name="alt">
+        <xsl:value-of select="./@alt"/>
+      </xsl:attribute>
+    </img>
+  </replace>
+
+</rules>

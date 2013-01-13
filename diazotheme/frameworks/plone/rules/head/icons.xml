@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- Favicons and app icons -->
+  <after css:theme="title">
+    <link rel="shortcut icon" type="image/x-icon" 
+          href="++theme++plone/favicon/favicon.ico"/>
+    <link rel="apple-touch-icon"  
+          href="++theme++plone/favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="++theme++plone/favicon/apple-touch-icon-144x144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="++theme++plone/favicon/apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="++theme++plone/favicon/apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+          href="++theme++plone/favicon/apple-touch-icon-57x57-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed"
+          href="++theme++plone/favicon/apple-touch-icon-precomposed.png" />
+  </after>
+
+</rules>

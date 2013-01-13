@@ -27,5 +27,11 @@
   <!-- Get Plone favicons and touch icons. -->
   <replace css:theme="link[rel='shortcut icon']"  css:content="link[rel='shortcut icon']" />
   <replace css:theme="link[rel='apple-touch-icon']"  css:content="link[rel='apple-touch-icon']" />
+  <replace css:theme="link[href*='global']">
+      <link rel="stylesheet" href="++theme++goldilocks-framework/css/global.css" media="all"/>
+  </replace>
+  <replace css:theme="link[href*='layout']">
+      <link rel="stylesheet" href="++theme++goldilocks-framework/css/layout.css" media="all and (min-width: 33.236em)"/>
+  </replace>
 
 </rules>
