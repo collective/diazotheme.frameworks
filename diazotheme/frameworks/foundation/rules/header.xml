@@ -6,7 +6,7 @@
 
   <!-- Header -->
   <replace css:content="#portal-top">
-    <header>
+    <header class="container top-nav bottom-border">
       <div class="row">
         <div class="twelve columns">
           <nav class="top-bar">
@@ -47,8 +47,7 @@
           <div class="nine columns">
               <xsl:apply-templates css:select="#portal-searchbox > form"/>
           </div>
-      </div>          
-      <hr />
+      </div>       
     </header>
   </replace>
   <replace css:content="#portal-searchbox .LSBox">

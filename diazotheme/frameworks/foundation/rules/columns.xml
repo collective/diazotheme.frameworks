@@ -5,11 +5,6 @@
          xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <!-- Columns -->
-  <replace content="//*[@id='portal-column-content' and contains(@class, 'width-3:4') and contains(@class, 'position-1:4')]">
-      <div class="nine columns push-three">
-          <xsl:apply-templates select="./*"/>
-      </div>
-  </replace>
   <replace content="//*[@id='portal-column-content' and contains(@class, 'width-1:2') and contains(@class, 'position-1:4')]">
       <div class="six columns push-three">
           <xsl:apply-templates select="./*"/>

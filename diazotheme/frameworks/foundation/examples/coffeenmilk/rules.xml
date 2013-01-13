@@ -12,7 +12,10 @@
          css:if-content="#visual-portal-wrapper"/>
 
   <xi:include href="++theme++foundation-framework/rules/head-base.xml"/>
-  <xi:include href="++theme++foundation-framework/rules/head-theme.xml"/>
+  <xi:include href="++theme++foundation-framework/examples/rules/theme.xml"/>
+  <after css:theme="link[href*='foundation.min.css']">
+      <link href="++theme++foundstyles-coffeenmilk/app.css" rel="stylesheet"/>
+  </after>
 
   <!-- Body rules
        ================================================================== -->
@@ -20,7 +23,7 @@
   <xi:include href="++theme++foundation-framework/rules/header.xml"/>
   <xi:include href="++theme++foundation-framework/rules/columns.xml"/>
   <xi:include href="++theme++foundation-framework/rules/portlets.xml"/>
-  <xi:include href="++theme++foundation-framework/rules/lead.xml"/>
+  <xi:include href="++theme++foundation-framework/examples/rules/lead.xml"/>
   <xi:include href="++theme++foundation-framework/rules/content.xml"/>
   <xi:include href="++theme++foundation-framework/rules/footer.xml"/>
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- Style -->
+  <after css:theme-children="head">
+<style>
+    .top-nav { height: auto; }
+    .top-nav form { margin-bottom: 0; }
+    .top-bar ul > li.divider,
+    .top-bar ul > li.active:not(.name) { background-color: rgba(120, 120, 120, .1); }
+    .top-bar ul > li:hover:not(.name) { background-color: rgba(120, 120, 120, .2) !important; } 
+    nav.top-bar { background-color: transparent; }
+</style>
+  </after>
+
+</rules>

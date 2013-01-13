@@ -18,6 +18,12 @@
   <!-- Foundation Framework -->
   <plone:static directory="foundation" 
                 name="foundation-framework" type="theme" />
+  <plone:static directory="foundation/examples/bladesofsteel" 
+                name="foundstyles-bladesofsteel" type="theme" />
+  <plone:static directory="foundation/examples/coffeenmilk" 
+                name="foundstyles-coffeenmilk" type="theme" />
+  <plone:static directory="foundation/examples/evergreen" 
+                name="foundstyles-evergreen" type="theme" />
 
   <!-- Goldilocks Framework -->
   <plone:static directory="goldilocks" 

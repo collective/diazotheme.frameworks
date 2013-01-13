@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+         xmlns:css="http://namespaces.plone.org/diazo/css"
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <replace content="//*[@id='portal-columns']">
+      <section class="container" id="into">
+           <header class="row">
+               <h1><xsl:value-of css:select=".documentFirstHeading"/></h1>
+               <xsl:if css:test=".documentDescription">
+                   <p class="lead">
+                       <xsl:value-of select="//*[@class='documentDescription']/text()"/>
+                   </p>
+               </xsl:if>
+           </header>
+      </section>
+      <section class="container">
+          <div id="portal-columns" class="row">
+              <xsl:apply-templates select="./*"/>
+          </div>
+      </section>
+  </replace>
+  <drop css:content=".documentFirstHeading"/>
+  <drop css:content=".documentDescription"/>
+
+</rules>
