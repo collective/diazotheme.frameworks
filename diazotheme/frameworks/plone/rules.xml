@@ -22,6 +22,7 @@
 
   <!-- Change the logo in content and the copy the portal-top children -->
   <xi:include href="++theme++plone/rules/logo/default-56.xml"/>
+  <xi:include href="++theme++plone/rules/utility/structures.xml"/>
 
   <!-- Copy over the content -->
   <replace css:theme="body" css:content="body" />

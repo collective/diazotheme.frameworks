@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+       xmlns:css="http://namespaces.plone.org/diazo/css"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+       xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <replace css:content="#portal-top">
+      <header id="portal-top">
+          <div class="row">
+              <xsl:apply-templates select="./*"/>
+          </div>
+      </header>
+  </replace>
+
+  <replace css:content="#portal-globalnav">
+      <nav id="portal-globalnav">
+          <ul>
+              <xsl:apply-templates select="./*"/>
+          </ul>
+      </nav>
+  </replace>
+
+  <replace css:content="#portal-columns">
+      <section id="portal-columns">
+          <div class="row">
+              <xsl:apply-templates select="./*"/>
+          </div>
+      </section>
+  </replace>
+
+  <replace css:content="#portal-footer-wrapper">
+      <footer id="portal-footer-wrapper">
+          <div class="row">
+              <xsl:apply-templates select="./*"/>
+          </div>
+      </footer>
+  </replace>
+
+  <replace css:content-children="#portal-column-one, #portal-column-two">
+      <aside>
+          <xsl:apply-templates select="./*"/>
+      </aside>
+  </replace>
+
+  <rules css:if-content=".documentFirstHeading">
+      <replace css:content=".documentFirstHeading">
+          <header>
+              <xsl:copy-of select="."/>
+              <xsl:copy-of select="../*[@class='documentDescription']"/>
+          </header>
+      </replace>
+      <drop css:content=".documentDescription" />
+  </rules>
+  
+  <replace css:content=".documentByLine">
+      <footer>
+          <xsl:apply-templates select="./*"/>
+      </footer>
+  </replace>
+
+</rules>
