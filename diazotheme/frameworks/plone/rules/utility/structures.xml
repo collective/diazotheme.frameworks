@@ -4,11 +4,10 @@
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
        xmlns:xi="http://www.w3.org/2001/XInclude">
 
-  <replace css:content="#portal-top">
-      <header id="portal-top">
-          <div class="row">
-              <xsl:apply-templates select="./*"/>
-          </div>
+  <replace css:content="#portal-header">
+      <header>
+          <xsl:copy-of select="./@*"/>
+          <xsl:apply-templates select="./*"/>
       </header>
   </replace>
 
@@ -18,14 +17,6 @@
               <xsl:apply-templates select="./*"/>
           </ul>
       </nav>
-  </replace>
-
-  <replace css:content="#portal-columns">
-      <section id="portal-columns">
-          <div class="row">
-              <xsl:apply-templates select="./*"/>
-          </div>
-      </section>
   </replace>
 
   <replace css:content="#portal-footer-wrapper">
@@ -54,8 +45,31 @@
   
   <replace css:content=".documentByLine">
       <footer>
+          <xsl:copy-of select="./@*"/>
           <xsl:apply-templates select="./*"/>
       </footer>
+  </replace>
+
+  <replace css:content="#content">
+      <article>
+          <xsl:copy-of select="./@*"/>
+          <xsl:apply-templates select="./*"/>
+      </article>
+  </replace>
+
+  <replace css:content="#content">
+      <article>
+          <xsl:copy-of select="./@*"/>
+          <xsl:apply-templates select="./*"/>
+      </article>
+  </replace>
+  <replace css:content="#portal-column-one, #portal-column-two">
+      <div>
+          <xsl:copy-of select="./@*"/>
+          <aside>
+              <xsl:apply-templates select="./*"/>
+          </aside>
+      </div>
   </replace>
 
 </rules>
