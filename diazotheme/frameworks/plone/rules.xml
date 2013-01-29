@@ -16,6 +16,7 @@
   <xi:include href="++theme++plone/rules/head/base.xml"/>
   <xi:include href="++theme++plone/rules/head/theme.xml"/>
   <xi:include href="++theme++plone/rules/head/icons.xml"/>
+  <xi:include href="++theme++plone/rules/utility/responsify.xml"/>
 
   <!-- Body rules
        ================================================================== -->

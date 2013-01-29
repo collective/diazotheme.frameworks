@@ -1,0 +1,127 @@
+@media screen and (min-width: 1455px) {
+    body {
+        width: 100%;
+    }
+    #visual-portal-wrapper {
+        width: 90em ! important;
+        margin: 0px auto ! important;
+        display: block;
+        float: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    div.cell, div.row {
+        position: static;
+        margin-left: 0;
+    }
+    div.cell {
+        width: inherit;
+    }
+    body {
+        padding: 0 .5em;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+    #portal-column-content {
+        width: 65%;
+    }
+    #portal-column-content:first-child:last-child {
+        width: 100%;
+    }
+    #portal-column-one, #portal-column-two {
+        width: 33%;
+        float: right;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /*    body { min-width: 25em; }*/
+    .LSBox .searchButton {
+        display: none;
+    }
+    #portal-logo {
+        display: block;
+        margin-top: 0;
+        float: left;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    body { min-width: 215px; }
+    #portal-searchbox form, #searchGadget, .LSBox {
+        width: 90%;
+        margin: 1em auto;
+        float: none;
+    }
+    #portal-header > div, 
+    #portal-header > a {
+        float: none;
+    }
+}
+
+#dropnav {
+    background: #ddd;
+    clear: both;
+    font-size: 80%;
+    margin: 0 0 1em;
+}
+#dropnav li a {
+    background: #ddd;
+    border-bottom: 0.1em solid white;
+    display: block;
+    padding: 0.5em 0 2em;
+    text-indent: 1em;
+    white-space: normal;
+    width: 100%;
+}
+#dropnav .selected a, #dropnav a:hover {
+    background: #205C90;
+    color: White;
+}
+#dropnav .selected a:hover {
+    background: #ddd;
+    color: #205C90;
+}
+ul li #toggleNav {
+    text-indent: -2000em;
+    position: relative;
+}
+#toggleNav span {
+    position: absolute;
+    display: block;
+    width: 3em;
+    height: 3px;
+    background: #ddd;
+    border-top: 5px solid #205C90;
+    border-bottom: 5px solid #205C90;
+    top: 1em;
+    right: 1em;
+}
+#toggleNav:hover span {
+    background-color: #205C90;
+    border-color: #ddd;
+}
+#toggleNav span span {
+    border-bottom-width: 0;
+    height: 0;
+    right: 0;
+    top: 11px;
+}
+#portal-globalnav.inactive {
+    visibility: hidden;
+    position: absolute;
+}
+#dropnav.inactive {
+    display: none;
+}
+#navWrapper {
+    clear: both;
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 1em;
+}
+#navWrapper.dropped {
+    overflow: visible;
+}
