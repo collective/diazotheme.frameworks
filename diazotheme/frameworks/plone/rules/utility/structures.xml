@@ -37,7 +37,7 @@
       <replace css:content=".documentFirstHeading">
           <header>
               <xsl:copy-of select="."/>
-              <xsl:copy-of select="../*[@class='documentDescription']"/>
+              <xsl:apply-templates select="../*[@class='documentDescription']"/>
           </header>
       </replace>
       <drop css:content=".documentDescription" />

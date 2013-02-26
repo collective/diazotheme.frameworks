@@ -31,6 +31,14 @@
   <plone:static directory="goldilocks/examples/black" 
                 name="goldilocks-black" type="theme" />
 
+  <!-- Kube Framework -->
+  <plone:static directory="kube" 
+                name="kube-framework" type="theme" />
+  <plone:static directory="kube/examples/start" 
+                name="kube-start" type="theme" />
+  <plone:static directory="kube/examples/demo" 
+                name="kube-demo" type="theme" />
+
   <!-- Plone Utils -->
   <plone:static directory="plone" name="plone" type="theme"/>
 
