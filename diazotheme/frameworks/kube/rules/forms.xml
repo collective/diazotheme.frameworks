@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+       xmlns:css="http://namespaces.plone.org/diazo/css"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+       xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <replace css:content="input[type='submit']">
+        <input class="btn">
+            <xsl:copy-of select="./@type|./@alt|./@name|./@value"/>
+        </input>
+    </replace>
+
+    <replace css:content="form">
+        <form class="forms">
+            <xsl:copy-of select="./@action|./@method|./@name"/>
+            <ul>
+                <xsl:for-each css:select=".field">
+                    <xsl:variable name="error" select="./div[2]"/>
+                    <li>
+                        <label class="bold">
+                            <xsl:copy-of select="./label/@for"/>
+                            <xsl:value-of select="./label/text()"/>
+                            <xsl:if test="$error">
+                                <span class="error"><xsl:value-of select="$error/text()"/></span>
+                            </xsl:if>
+                        </label>
+                        <xsl:choose>
+                            <xsl:when test="textarea">
+                                <textarea>
+                                    <xsl:copy-of select="./textarea/@name|./textarea/@type"/>
+                                    <xsl:if test="$error">
+                                        <xsl:attribute name="class">input-error</xsl:attribute>
+                                    </xsl:if>
+                                </textarea>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <input>
+                                    <xsl:copy-of select="./input/@name|./input/@type"/>
+                                    <xsl:if test="$error">
+                                        <xsl:attribute name="class">input-error</xsl:attribute>
+                                    </xsl:if>
+                                </input>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:if test="./div[1]">
+                            <div class="descr">
+                                <xsl:value-of select="./div[1]"/>
+                            </div>
+                        </xsl:if>
+                    </li>
+                </xsl:for-each>
+                <li>
+                    <xsl:for-each css:select="input[type='submit']">
+                        <input class="btn">
+                            <xsl:copy-of select="./@type|./@value"/>
+                        </input> 
+                    </xsl:for-each>
+                </li>
+            </ul>
+        </form>
+    </replace>
+
+    <replace css:content=".portletSearch form">
+        <xsl:variable name="searchfield" css:select=".searchField"/>
+        <xsl:variable name="searchbutton" css:select=".searchButton"/>
+        <form class="forms">
+            <xsl:copy-of select="./@action|./@method|./@name"/>
+            <ul>
+                <li>
+                    <input type="text" name="foo" class="input-search" id="foo">
+                        <xsl:copy-of select="$searchfield/@placeholder|$searchfield/@name|$searchfield/@type|$searchfield/@title"/>
+                    </input> 
+                </li>
+                <li>
+                    <button class="btn btn-round"><xsl:value-of select="$searchbutton/@value"/></button>
+                </li>
+            </ul>
+        </form>
+    </replace>
+
+    <replace css:content="#portal-searchbox form">
+        <xsl:variable name="searchfield" css:select=".searchField"/>
+        <xsl:variable name="searchbutton" css:select=".searchButton"/>
+        <form>
+            <xsl:copy-of select="./@action|./@method|./@name"/>
+            <div class="btn-group">
+                <input type="text" name="foo" class="input-search" id="foo">
+                    <xsl:copy-of select="$searchfield/@placeholder|$searchfield/@name|$searchfield/@type|$searchfield/@title"/>
+                </input> 
+                <button class="btn btn-round"><xsl:value-of select="$searchbutton/@value"/></button>
+            </div>
+        </form>
+    </replace>
+
+    <replace css:content="form.searchPage">
+        <!--  
+        <xsl:apply-templates css:select=".documentFirstHeading"/>
+        <p class="lead"><xsl:apply-templates css:select="#search-results-bar > span:first-child"/></p>
+        -->
+        <form>
+            <xsl:copy-of select="./@action|./@method|./@name"/>
+            <xsl:variable name="searchfield" css:select="input[name='SearchableText']"/>
+            <xsl:variable name="searchbutton" css:select=".searchButton"/>
+            <xsl:apply-templates select=".//input[@type='hidden']"/>
+            <div class="row">
+                <div class="half">
+                    <xsl:apply-templates css:select=".documentFirstHeading"/>
+                    <p class="lead"><xsl:apply-templates css:select="#search-results-bar > span:first-child"/></p>
+                    <p class="btn-group">
+                        <input class="input-search">
+                            <xsl:copy-of select="$searchfield/@placeholder|$searchfield/@name|$searchfield/@type|$searchfield/@title|$searchfield/@value"/>
+                        </input> 
+                        <button class="btn btn-round"><xsl:value-of select="$searchbutton/@value"/></button>
+                    </p>
+                    <p>
+                        <xsl:apply-templates css:select="#searchResultsSort > *"/>
+                    </p>
+                </div>
+                <div class="half">
+                    <h3><xsl:apply-templates css:select=".actionMenu dt"/></h3>
+                    <div class="row">
+                    <xsl:for-each css:select="#search-filter fieldset">
+                        <div class="half">
+                            <h4><xsl:apply-templates select="legend/text()"/></h4>
+                            <xsl:for-each select="./div/div/label|./div/label">
+                                <label>
+                                    <xsl:copy-of select="./@for"/>
+                                    <xsl:apply-templates select="./preceding-sibling::input[1]"/>
+                                    <xsl:copy-of select="./text()"/>
+                                </label><br />
+                            </xsl:for-each>
+                        </div>
+                    </xsl:for-each>                    
+                    </div>
+                </div>
+            </div>
+        </form>
+    </replace>
+    <drop css:content=".optionsToggle, .optionsToggle label, .optionsToggle input"/>
+
+</rules>

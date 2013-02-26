@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+       xmlns:css="http://namespaces.plone.org/diazo/css"
+       xmlns:xhtml="http://www.w3.org/1999/xhtml"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+       xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- The condition makes sure that theme is only applied when served in the 
+       plone main_template. This is necessary for functional edit popups in 
+       Tiny, for example. -->
+  <theme href="++theme++kube-start/index.html" css:if-content="#visual-portal-wrapper"/>
+
+  <!-- Head rules
+       ================================================================== -->
+  <xi:include href="++theme++kube-framework/rules/head.xml"/> 
+
+  <replace css:theme="link[href*='master.css']">
+    <link rel="stylesheet" href="/++theme++kube-start/css/master.css" media="all" />
+  </replace>
+  <after css:theme="link[href*='master.css']">
+<style>
+    #nav a { line-height: 2.2; }
+    #blocks li { height: auto; }
+    #block { background-color: rgb(248, 248, 248); }
+    .breadcrumbs { margin-bottom: 1.5em; }
+    nav { float: right; }
+    nav ul { list-style: none outside none; margin: 0; }
+    nav ul li { color: rgb(153, 153, 153); float: left; margin-left: 1.5em; }
+</style>
+  </after>
+
+  <!-- Body rules
+       ================================================================== -->
+
+  <!-- Change the logo in content and the copy the portal-top children -->
+  <xi:include href="++theme++plone/rules/icon/black-56.xml"/>
+  <xi:include href="++theme++plone/rules/utility/clean.xml"/>
+
+  <xi:include href="++theme++kube-framework/rules/structures.xml"/>
+  <xi:include href="++theme++kube-framework/rules/content.xml"/>
+  <xi:include href="++theme++kube-framework/rules/forms.xml"/>
+  <xi:include href="++theme++kube-framework/rules/portlets.xml"/>
+
+  <!-- Copy over the content -->
+  <replace css:theme="#header h1" css:content="#portal-logo" />
+  <copy css:theme="#header nav ul" css:content="#portal-globalnav > li" />
+  <after css:theme-children="#header nav ul">
+      <li>
+          <xsl:apply-templates  css:select="#portal-searchbox form" />
+      </li>
+  </after>
+  <drop css:theme="#main h2"/>
+  <replace css:theme="#main .threequarter">
+      <article class="twothird">
+          <xsl:apply-templates css:select="#portal-column-content > *"/>
+      </article>      
+  </replace>
+
+  <xsl:variable name="c1p" css:select="#portal-column-one > .portletWrapper"/>
+  <replace css:theme="#main .quarter">
+       <xsl:if test="$c1p">
+           <aside class="third">
+               <xsl:apply-templates select="$c1p"/>
+           </aside>
+       </xsl:if>
+  </replace>
+
+  <xsl:variable name="c2p" css:select="#portal-column-two > .portletWrapper"/>
+  <replace css:theme="#blocks">
+      <xsl:choose>
+          <xsl:when test="count($c2p) = 0"/>
+          <xsl:when test="count($c2p) = 1">
+              <div id="block"> 
+                  <xsl:apply-templates css:select="#portal-column-two .portletWrapper"/>
+              </div>
+          </xsl:when>
+          <xsl:when test="count($c2p) = 2">
+              <ul id="blocks" class="block-two"> 
+                  <li>
+                      <xsl:apply-templates css:select="#portal-column-two .portletWrapper:nth-child(2n+1)"/>
+                  </li>
+                  <li>
+                      <xsl:apply-templates css:select="#portal-column-two .portletWrapper:nth-child(2n+2)"/>
+                  </li>
+              </ul>
+          </xsl:when>
+          <xsl:otherwise>
+              <ul id="blocks" class="block-three">
+                  <li>
+                      <xsl:apply-templates css:select="#portal-column-two .portletWrapper:nth-child(3n+1)"/>
+                  </li>
+                  <li>
+                      <xsl:apply-templates css:select="#portal-column-two .portletWrapper:nth-child(3n+2)"/>
+                  </li>
+                  <li>
+                      <xsl:apply-templates css:select="#portal-column-two .portletWrapper:nth-child(3n+3)"/>
+                  </li>
+              </ul>
+          </xsl:otherwise>
+      </xsl:choose>
+  </replace> 
+  <strip css:content=".portletWrapper"/>
+  <copy css:theme="#footer">
+      <xsl:apply-templates css:select="#portal-footer > p"/>
+      <nav>
+          <xsl:apply-templates css:select="#portal-siteactions" />
+      </nav>
+      <p>
+          <xsl:apply-templates css:select="#portal-colophon a" />
+      </p>
+  </copy>
+<!--
+  <copy css:theme="#footer nav ul" css:content="#portal-siteactions > li" />
+
+  <drop css:theme="#intro"/> 
+  <drop css:theme="#partners"/>
+  
+-->
+</rules>

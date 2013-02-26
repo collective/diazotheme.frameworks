@@ -1,0 +1,45 @@
+/* =Typography
+-----------------------------------------------------------------------------*/
+body {
+	
+}
+	
+/* =Links
+-----------------------------------------------------------------------------*/
+
+
+/* =Layout
+-----------------------------------------------------------------------------*/
+#page {
+	width: 940px;
+	padding: 0 10px;
+	margin: 24px auto;
+}
+
+.left { float: left; }
+.right { float: right; }
+.inline, .inline li { display: inline; }
+.block { display: block; }
+.block.inline, .block.inline li { display: inline-block; }
+.spacious { margin: 2em 0; }
+.no-overflow { overflow: hidden; }
+
+/* =Header
+-----------------------------------------------------------------------------*/
+#portal-logo { float: left; }
+#portal-searchbox { float: right; }
+#portal-searchbox form { margin: .75em 0 .25em 2em; }
+#portal-breadcrumbs { margin: 0 0 2em; }
+#portal-globalnav ul { margin: .5em 0; }
+.separator { margin: .5em; }
+nav li { padding: .5em 1em; }
+/* =Nav
+-----------------------------------------------------------------------------*/
+
+
+/* =Misc
+-----------------------------------------------------------------------------*/
+
+
+/* =Footer
+-----------------------------------------------------------------------------*/

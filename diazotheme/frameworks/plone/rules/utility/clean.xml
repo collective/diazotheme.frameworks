@@ -23,5 +23,7 @@
   <strip css:content=".LSBox"/>
   <strip css:content=".documentEditable"/>
   <strip css:content=".portletWrapper"/>
-
+  <strip css:content="div[id*='viewlet-']"/>
+  <strip css:content="#portal-column-content > div"/>
+  
 </rules>
