@@ -4,7 +4,7 @@
          xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
          xmlns:xi="http://www.w3.org/2001/XInclude">
 
-  <replace css:content="#portal-icon > img">
+  <replace css:content="#portal-logo > img">
     <img>
       <xsl:attribute name="src">/++theme++plone/img/black/icon-56.png</xsl:attribute>
       <xsl:attribute name="width">56</xsl:attribute>
