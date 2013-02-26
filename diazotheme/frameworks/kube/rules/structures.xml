@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+       xmlns:css="http://namespaces.plone.org/diazo/css"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+       xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <replace css:content="#portal-top">
+      <header class="spacious no-overflow">
+          <xsl:apply-templates select="//div[@id='portal-header']/*"/>
+      </header>
+  </replace>
+
+  <replace css:content="#portal-globalnav">
+      <nav id="portal-globalnav">
+          <ul class="inline block right">
+              <xsl:apply-templates select="./*"/>
+          </ul>
+      </nav>
+  </replace>
+
+  <replace css:content="#portal-breadcrumbs">
+      <section class="breadcrumbs">
+          <xsl:copy-of select="./@id"/>
+          <xsl:apply-templates select="span[@id='breadcrumbs-home']/*[not(@class)]"/>
+          <xsl:for-each select="./span[not(@id='breadcrumbs-home')]/*[not(@class)]">
+              <span class="separator"> » </span>
+              <xsl:apply-templates select="."/>
+          </xsl:for-each>
+      </section>
+  </replace>
+
+  <replace css:content="#portal-footer-wrapper">
+      <footer id="portal-footer-wrapper">
+          <div class="row">
+              <xsl:apply-templates select="./*"/>
+          </div>
+      </footer>
+  </replace>
+
+  <replace css:content="#portal-columns">
+      <div class="row clear">
+          <xsl:apply-templates select="./*"/>
+      </div>
+  </replace>
+
+  <replace css:content="#portal-column-content">
+      <div class="half">
+          <xsl:apply-templates select="./*"/>
+      </div>
+  </replace>
+
+  <replace css:content-children="#portal-column-one, #portal-column-two">
+      <aside class="quarter">
+          <xsl:apply-templates select="./*"/>
+      </aside>
+  </replace>
+
+  <rules css:if-content=".documentFirstHeading">
+      <replace css:content=".documentFirstHeading">
+          <header>
+              <xsl:copy-of select="."/>
+              <p class="lead">
+                  <xsl:copy-of select="../*[@class='documentDescription']/text()"/>
+              </p>
+          </header>
+      </replace>
+      <drop css:content=".documentDescription" />
+  </rules>
+  
+  <replace css:content=".documentByLine">
+      <footer>
+          <xsl:copy-of select="./@*"/>
+          <xsl:apply-templates select="./*"/>
+      </footer>
+  </replace>
+
+  <replace css:content="#content">
+      <article>
+          <xsl:copy-of select="./@*"/>
+          <xsl:apply-templates select="./*"/>
+      </article>
+  </replace>
+
+  <replace css:content="#portal-column-one, #portal-column-two">
+      <div>
+          <xsl:copy-of select="./@*"/>
+          <aside>
+              <xsl:apply-templates select="./*"/>
+          </aside>
+      </div>
+  </replace>
+
+</rules>

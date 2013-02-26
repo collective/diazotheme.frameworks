@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+       xmlns:css="http://namespaces.plone.org/diazo/css"
+       xmlns:xhtml="http://www.w3.org/1999/xhtml"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+       xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- The condition makes sure that theme is only applied when served in the 
+       plone main_template. This is necessary for functional edit popups in 
+       Tiny, for example. -->
+  <theme href="++theme++kube-demo/index.html" css:if-content="#visual-portal-wrapper"/>
+
+  <!-- Head rules
+       ================================================================== --> 
+  <xi:include href="++theme++kube-framework/rules/head.xml"/> 
+
+  <replace css:theme="link[href*='demo.css']">
+    <link rel="stylesheet" href="/++theme++kube-demo/css/demo.css" media="all" />
+  </replace>
+  <after css:theme="link[href*='demo.css']">
+<style>
+    #header nav ul li a { line-height: 2.1; }
+    .inner,
+    table.striped tbody tr:nth-child(2n+1) td { background-color: rgba(0, 0, 0, .1); }
+    table.hovered tbody tr:hover td, 
+    table.hovered thead tr:hover th { background-color: rgba(0, 0, 0, .2); }
+    .breadcrumbs { margin-bottom: 2em; }
+    #outer a { color: rgba(155, 205, 255, .7 ); }
+    #outer a:hover { color: rgba(155, 205, 255, .5 ); }
+    .inner h3 > span, .inner h3 > div > span { display: block; color: rgba(0, 0, 0, .7 ); border-bottom: 1px solid rgba(0, 0, 0, .7 ); }
+    .inner h3 a { display: block; text-decoration: none; border-bottom: 1px solid rgb(51, 102, 153); }
+    .inner h3 a:hover { border-color: rgb(25, 51, 77); }
+    #outer h3 > span, #outer h3 > div > span { display: block; color: rgba(255, 255, 255, .7 ); border-bottom: 1px solid rgba(255, 255, 255, .7 ); }
+    #outer h3 a { display: block; text-decoration: none; border-bottom: 1px solid rgba(155, 205, 255, .7 ); }
+    #outer h3 a:hover { border-color: rgba(155, 205, 255, .5 ); }
+</style>
+  </after>
+
+  <!-- Body rules
+       ================================================================== -->
+
+  <!-- Change the logo in content and the copy the portal-top children -->
+  <xi:include href="++theme++plone/rules/icon/black-56.xml"/>
+  <xi:include href="++theme++plone/rules/utility/clean.xml"/> 
+
+  <xi:include href="++theme++kube-framework/rules/structures.xml"/> 
+  <xi:include href="++theme++kube-framework/rules/content.xml"/> 
+  <xi:include href="++theme++kube-framework/rules/forms.xml"/>
+  <xi:include href="++theme++kube-framework/rules/portlets.xml"/>
+
+  <!-- Copy over the content -->
+  <replace css:theme="#header h1" css:content="#portal-logo" />
+  <copy css:theme="#header nav ul" css:content="#portal-globalnav > li" />
+  <after css:theme-children="#header nav ul">
+      <li>
+          <xsl:apply-templates  css:select="#portal-searchbox form" />
+      </li>
+  </after>
+  <copy css:theme="#footer nav ul" css:content="#portal-siteactions > li" />
+
+  <drop css:theme="#intro"/> 
+  <drop css:theme="#partners"/>
+  <copy css:theme="#outer .twothird" css:content="#portal-column-content > *"/>
+  <copy css:theme="#outer .third" css:content="#portal-column-one .portletWrapper > *"/>
+  <drop css:theme="#outer .third" if-content="not(//*[@id='portal-column-one'])"/>
+  
+  <xsl:variable name="c2p" css:select="#portal-column-two .portletWrapper"/>
+  <copy css:theme="#main .row">
+      <xsl:choose>
+          <xsl:when test="count($c2p) = 1">
+              <xsl:apply-templates css:select="#portal-column-two .portletWrapper"/>
+          </xsl:when>
+          <xsl:when test="count($c2p) = 2">
+              <div class="half">
+                  <xsl:apply-templates css:select="#portal-column-two .portletWrapper:nth-child(2n+1)"/>
+              </div>
+              <div class="half">
+                  <xsl:apply-templates css:select="#portal-column-two .portletWrapper:nth-child(2n+2)"/>
+              </div>
+          </xsl:when>
+          <xsl:otherwise>
+              <div class="third">
+                  <xsl:apply-templates css:select="#portal-column-two .portletWrapper:nth-child(3n+1)"/>
+              </div>
+              <div class="third">
+                  <xsl:apply-templates css:select="#portal-column-two .portletWrapper:nth-child(3n+2)"/>
+              </div>
+              <div class="third">
+                  <xsl:apply-templates css:select="#portal-column-two .portletWrapper:nth-child(3n+3)"/>
+              </div>
+          </xsl:otherwise>
+      </xsl:choose>
+  </copy> 
+  <strip css:content=".portletWrapper"/>
+  <after css:theme="#main .row">
+      <div class="row">
+          <xsl:apply-templates css:select="#portal-footer > p"/>
+      </div>
+  </after>
+  <copy css:theme="#footer section" css:content-children="#portal-colophon a" />
+  
+</rules>
