@@ -5,26 +5,27 @@
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
        xmlns:xi="http://www.w3.org/2001/XInclude">
 
-  <!-- The condition makes sure that theme is only applied when served in the 
-       plone main_template. This is necessary for functional edit popups in 
-       Tiny, for example. -->
-  <theme href="++theme++goldilocks-framework/index.html"
-         css:if-content="#visual-portal-wrapper"/>
+    <!-- The condition makes sure that theme is only applied when served in the 
+         plone main_template. This is necessary for functional edit popups in 
+         Tiny, for example. -->
+    <theme href="++theme++goldilocks-framework/index.html"
+           css:if-content="#visual-portal-wrapper"/>
 
-  <xi:include href="++theme++goldilocks-framework/rules/head-base.xml"/>
-  <xi:include href="++theme++goldilocks-framework/rules/head-theme.xml"/>
+    <xi:include href="++theme++goldilocks-framework/rules/head-base.xml"/>
+    <xi:include href="++theme++goldilocks-framework/rules/head-theme.xml"/>
 
-  <!-- Body rules
-       ================================================================== -->
+    <!-- Body rules
+         ================================================================== -->
+    <xi:include href="++theme++goldilocks-framework/rules/columns.xml"/>
 
-  <!-- Change the logo in content and the copy the portal-top children -->
-  <xi:include href="++theme++plone/rules/logo/default-32.xml"/>
+    
+    <!-- Change the logo in content and the copy the portal-top children -->
+    <xi:include href="++theme++plone/rules/logo/default-32.xml"/>
 
-  <!-- Strip edit fixtures -->
-  <xi:include href="++theme++plone/rules/utility/clean.xml"/>
+    <!-- Strip edit fixtures -->
+    <xi:include href="++theme++plone/rules/utility/clean.xml"/>
 
-  <!-- Move the content body over to the theme side -->
-  
-  <replace css:theme="body" css:content="body"/>
+    <!-- Move the content body over to the theme side -->
+    <replace css:theme="body" css:content="body"/>
 
 </rules>
