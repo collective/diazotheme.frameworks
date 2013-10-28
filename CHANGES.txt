@@ -4,7 +4,10 @@ Changelog
 1.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Ensure Bootstrap buttons have value, name, and other attributes copied
+  to ensure form actions can take place.
+  [davidjb]
+   
 
 1.0dev (unreleased)
 ------------------
