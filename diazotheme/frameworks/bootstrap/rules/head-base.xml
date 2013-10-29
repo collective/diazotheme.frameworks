@@ -32,6 +32,11 @@
 
   <!-- Scripts -->
   <after css:theme-children="head" css:content="head script"/>
+  <replace theme="//comment()[contains(.,'html5shiv.js')]">
+    <!--[if gt IE 9]>
+        <script src="++theme++bootstrap-framework/js/html5shiv.js"></script>
+    <![endif]-->
+  </replace>
 
   <!-- Links -->
   <replace css:theme="link[href*='bootstrap-responsive.css']">
@@ -40,6 +45,7 @@
   <replace css:theme="link[rel='shortcut icon']" css:content="link[rel='shortcut icon']" />
   <after css:theme="link[rel='shortcut icon']" css:content="link[rel='apple-touch-icon']" />
   <drop css:theme="link[rel*='apple-']"/>
+
 
 
 </rules>
