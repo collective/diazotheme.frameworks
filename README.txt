@@ -14,21 +14,12 @@ Bootstrap
 ---------
 
 To update the resources in this package to a newer version of Bootstrap,
-do the following under an environment with a Bash or comparable shell::
+use the ``upgrade.sh`` script::
 
-   cd diazotheme.frameworks/diazotheme/framworks
-   wget http://getbootstrap.com/2.3.2/assets/bootstrap.zip
-   unzip -o bootstrap.zip
-   rm bootstrap.zip
-   cd bootstrap/examples
-   for file in *.html; 
-   do 
-      wget https://github.com/twbs/bootstrap/raw/gh-pages/2.3.2/examples/$file -O $file;
-   done
+   ./upgrade.sh 2.3.2
 
-   cd ../js
-   wget http://getbootstrap.com/2.3.2/assets/js/html5shiv.js -O html5shiv.js
+where the first argument is the version of Bootstrap to upgrade to.
 
 The current version of Bootstrap is 2.3.2. Note that this version is not
-backward compatible with the newer Bootstrap 3.x. The above instructions
-should only be utilsed for 2.x series updates.
+backward compatible with the newer Bootstrap 3.x. For now, the above 
+upgrade script **should** only be utilsed for 2.x series updates.
