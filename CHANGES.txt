@@ -9,8 +9,8 @@ Changelog
   [davidjb]
 - Update Bootstrap to 2.3.2 (and add upgrade instructions).
   [davidjb]
-- Ensure Bootstrap buttons have value, name, and other attributes copied
-  to ensure form actions can take place.
+- Ensure Bootstrap and Foundation buttons have value, name, 
+  and other attributes copied to ensure form actions can take place.
   [davidjb]
    
 

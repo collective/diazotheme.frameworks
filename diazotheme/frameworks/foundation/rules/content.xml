@@ -29,7 +29,11 @@
       </p>
   </replace>
   <replace css:content="input[type='submit']">
-    <button class="button"><xsl:value-of select="./@value"/></button>
+    <button>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">button</xsl:attribute>
+      <xsl:value-of select="./@value"/>
+    </button>
   </replace>
   
   <replace css:content=".visualClear">
