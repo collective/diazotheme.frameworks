@@ -4,6 +4,9 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Ensure separated items in edit bar menus are included in Bootstrap
+  themes.
+  [davidjb]
 - Update Bootstrap to 2.3.2 (and add upgrade instructions).
   [davidjb]
 - Ensure Bootstrap buttons have value, name, and other attributes copied
