@@ -4,6 +4,8 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Fix typo for rule for manage portlets rule in Bootstrap.
+  [davidjb]
 - Ensure relative paths are used for Plone logo resources for correct
   loading on sites not served at a domain root.
   [davidjb]
