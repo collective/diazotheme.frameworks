@@ -4,6 +4,11 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Ensure relative paths are used for Plone logo resources for correct
+  loading on sites not served at a domain root.
+  [davidjb]
+- Ensure correct path naming for default (blue) Plone logos.
+  [davidjb]
 - Ensure separated items in edit bar menus are included in Bootstrap
   themes.
   [davidjb]

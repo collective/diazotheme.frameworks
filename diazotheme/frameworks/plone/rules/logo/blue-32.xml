@@ -6,7 +6,7 @@
 
   <replace css:content="#portal-logo > img">
     <img>
-      <xsl:attribute name="src">/++theme++plone/img/blue/logo-32.png</xsl:attribute>
+      <xsl:attribute name="src">++theme++plone/img/default/logo-32.png</xsl:attribute>
       <xsl:attribute name="width">123</xsl:attribute>
       <xsl:attribute name="height">32</xsl:attribute>
       <xsl:attribute name="title">
