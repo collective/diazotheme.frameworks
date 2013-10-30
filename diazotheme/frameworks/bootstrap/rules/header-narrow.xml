@@ -28,6 +28,9 @@
                       <form class="navbar-search pull-right">
                           <xsl:copy-of select=".//*[@id='portal-searchbox']/form/@*" />
                           <input class="search-query">
+                              <xsl:attribute name="placeholder">
+                                <xsl:value-of select=".//label[@for='searchGadget']/text()"/>
+                              </xsl:attribute> 
                               <xsl:copy-of select=".//input[@id='searchGadget']/@*[local-name() != 'class']"/>
                           </input>
                           <label for="searchbox_currentfolder_only"  id="searchbox_currentfolder_only_label" class="checkbox pull-right">
