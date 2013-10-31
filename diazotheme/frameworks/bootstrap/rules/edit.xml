@@ -12,6 +12,7 @@
 
   <replace css:content="table.listing">
     <table class="table table-striped">
+      <xsl:copy-of select="./@*[local-name() != 'class']"/>
       <xsl:apply-templates select="./*"/>
     </table>
   </replace>

@@ -4,6 +4,8 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Allow dragging to occur on table listings in Bootstrap.
+  [davidjb]
 - Use label text as placeholder for site search in Bootstrap.
   [davidjb]
 - Fix typo for rule for manage portlets rule in Bootstrap.
