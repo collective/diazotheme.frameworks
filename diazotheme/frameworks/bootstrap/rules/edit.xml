@@ -72,6 +72,38 @@
     </div>
   </replace>
 
+  <replace css:content="dl.enableFormTabbing">
+    <div>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class"><xsl:value-of select="./@class" /> accordion</xsl:attribute>
+      <xsl:for-each select="./dt">
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse">
+                <xsl:attribute name="data-parent">#<xsl:value-of select="../@id"/></xsl:attribute>
+                <xsl:attribute name="href">#<xsl:value-of select="./@id"/></xsl:attribute>
+                <xsl:value-of select="./text()"/>
+              </a>
+            </div>
+            <div>
+              <xsl:copy-of select="@*" />
+              <xsl:choose>
+                  <xsl:when test="position() = 1">
+                      <xsl:attribute name="class"><xsl:value-of select="./@class" /> accordion-body collapse in</xsl:attribute>
+                  </xsl:when>
+                  <xsl:otherwise>
+                      <xsl:attribute name="class"><xsl:value-of select="./@class" /> accordion-body collapse out</xsl:attribute>
+                  </xsl:otherwise>
+              </xsl:choose>
+              <div class="accordion-inner">
+                <xsl:apply-templates select="./following-sibling::dd[1]/*"/>
+              </div>
+            </div>
+          </div>
+      </xsl:for-each>
+    </div>
+  </replace>
+
   <replace css:content="form.enableFormTabbing">
     <form>
       <xsl:copy-of select="@*" />
