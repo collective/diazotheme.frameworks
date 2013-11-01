@@ -4,6 +4,11 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: ensure *all* xi:include rules are excluded if theming
+  needs to be avoided by placing the conditional statement on the
+  top-level rules element. Without this, included rules are still
+  applied to content, breaking unthemed pages.
+  [davidjb]
 - Bootstrap: convert dl form tabbing in Plone into accordions.
   [davidjb]
 - Bootstrap: ensure form classes are themed. This allows form functionality

@@ -3,13 +3,13 @@
        xmlns:css="http://namespaces.plone.org/diazo/css"
        xmlns:xhtml="http://www.w3.org/1999/xhtml"
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"    
-       xmlns:xi="http://www.w3.org/2001/XInclude">
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       css:if-content="#visual-portal-wrapper">
 
   <!-- The condition makes sure that theme is only applied when served in the 
        plone main_template. This is necessary for functional edit popups in 
        Tiny, for example. -->
-  <theme href="++theme++bootstrap-framework/examples/starter-template.html" 
-         css:if-content="#visual-portal-wrapper"/>
+  <theme href="++theme++bootstrap-framework/examples/starter-template.html"/>
 
   <!-- Head rules
        ================================================================== -->
