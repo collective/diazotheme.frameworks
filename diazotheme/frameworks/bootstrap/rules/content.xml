@@ -6,19 +6,19 @@
          
   <!-- Breadcrumbs -->
   <drop css:content="#portal-breadcrumbs"/>
-  <after css:theme-children=".main" method="raw">
+  <replace css:content="#portal-breadcrumbs" method="raw" if-content="//*[@id='breadcrumbs-1']">
     <ul class="breadcrumb">
-        <xsl:for-each css:select="#portal-breadcrumbs > span:not(:last-child) a">
+        <xsl:for-each select="./span[not(position() = last())]//a">
             <li>
-                <xsl:apply-templates css:select="a"/>
+                <xsl:apply-templates select="."/>
                 <span class="divider">/</span>
             </li>
         </xsl:for-each>
         <li class="active">
-            <xsl:apply-templates css:select="#portal-breadcrumbs > span:last-child > *"/>
+            <xsl:apply-templates select="./span[position() = last()]/*"/>
         </li>
     </ul>
-  </after> 
+  </replace> 
 
   <!-- Tiles -->
   <replace css:content=".tileItem">

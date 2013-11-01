@@ -4,6 +4,10 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Refactor breadcrumb replacement to use XPath in Boostrap.
+  [davidjb]
+- Ensure breadcrumbs display on themed pages in Bootstrap.
+  [davidjb]
 - Allow dragging to occur on table listings in Bootstrap.
   [davidjb]
 - Use label text as placeholder for site search in Bootstrap.
