@@ -4,7 +4,15 @@
          xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
          xmlns:xi="http://www.w3.org/2001/XInclude">
 
-  <replace css:content=".portlet">
+  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' portlet-action ')]/@class">
+    <xsl:attribute name="class"><xsl:value-of select="."/> pull-left</xsl:attribute> 
+  </replace>
+
+  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' managedPortlet ')]/@class">
+    <xsl:attribute name="class"><xsl:value-of select="."/> well well-small</xsl:attribute> 
+  </replace>
+
+  <replace css:content=".portlet:not(.managedPortlet)">
       <xsl:if css:test=".portletHeader">
           <h2><xsl:apply-templates css:select=".portletHeader > *"/></h2>
       </xsl:if>
@@ -111,5 +119,6 @@
           <xsl:apply-templates select="./text()" />
       </small>
   </replace>
+
 
 </rules>

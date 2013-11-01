@@ -4,6 +4,9 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: style portlet management options with Bootstrap
+  markup.
+  [davidjb]
 - Bootstrap: ensure *all* xi:include rules are excluded if theming
   needs to be avoided by placing the conditional statement on the
   top-level rules element. Without this, included rules are still
