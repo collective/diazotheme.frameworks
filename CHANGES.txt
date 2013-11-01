@@ -4,6 +4,8 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Radio buttons on forms should be on the left in Bootstrap.
+  [davidjb]
 - Refactor breadcrumb replacement to use XPath in Boostrap.
   [davidjb]
 - Ensure breadcrumbs display on themed pages in Bootstrap.

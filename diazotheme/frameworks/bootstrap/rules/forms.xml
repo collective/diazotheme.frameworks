@@ -30,7 +30,7 @@
                   <xsl:value-of select="./@value"/>
               </button>
           </xsl:when>
-          <xsl:when css:test="[type='checkbox']">
+          <xsl:when css:test="[type='checkbox'],[type='radio']">
               <input>
                   <xsl:copy-of select="@*" />
                   <xsl:attribute name="class">pull-left</xsl:attribute>
