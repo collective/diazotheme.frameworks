@@ -85,16 +85,16 @@
                 <xsl:value-of select="./legend"/>
               </a>
             </div>
-            <div class="accordion-body collapse in">
+            <div>
+              <xsl:copy-of select="@*" />
               <xsl:choose>
                   <xsl:when test="position() = 1">
-                      <xsl:attribute name="class">accordion-body collapse in</xsl:attribute>
+                      <xsl:attribute name="class"><xsl:value-of select="./@class" /> accordion-body collapse in</xsl:attribute>
                   </xsl:when>
                   <xsl:otherwise>
-                      <xsl:attribute name="class">accordion-body collapse out</xsl:attribute>
+                      <xsl:attribute name="class"><xsl:value-of select="./@class" /> accordion-body collapse out</xsl:attribute>
                   </xsl:otherwise>
               </xsl:choose>
-              <xsl:copy-of select="@*" />
               <div class="accordion-inner">
                 <xsl:apply-templates select="./*[not(self::legend)]"/>
               </div>

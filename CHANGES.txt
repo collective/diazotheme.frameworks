@@ -4,6 +4,9 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: ensure accordions work on tabbed forms where fieldsets
+  have classes assigned.
+  [davidjb]
 - Radio buttons on forms should be on the left in Bootstrap.
   [davidjb]
 - Refactor breadcrumb replacement to use XPath in Boostrap.
