@@ -75,7 +75,7 @@
   <replace css:content="form.enableFormTabbing">
     <form>
       <xsl:copy-of select="@*" />
-      <xsl:attribute name="class">accordion</xsl:attribute>
+      <xsl:attribute name="class"><xsl:value-of select="./@class" /> accordion</xsl:attribute>
       <xsl:for-each select="./fieldset">
           <div class="accordion-group">
             <div class="accordion-heading">

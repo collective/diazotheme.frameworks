@@ -4,6 +4,9 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: ensure form classes are themed. This allows form functionality
+  that relies on classes (such as unload protection, KSS, etc).
+  [davidjb]
 - Bootstrap: ensure accordions work on tabbed forms where fieldsets
   have classes assigned.
   [davidjb]
