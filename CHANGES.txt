@@ -4,6 +4,11 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: expand selectors for different button types.
+  [davidjb]
+- Bootstrap: improve button markup to ensure button classes are transposed
+  (fixing add/edit content, and add user form issues).
+  [davidjb]
 - Bootstrap: tidy form field markup to make fields clear, especially when
   errors have occurred.
   [davidjb]

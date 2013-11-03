@@ -57,18 +57,21 @@
 
   <replace css:content="input">
       <xsl:choose>
-          <xsl:when css:test="[type='submit']">
+          <xsl:when css:test="[type='submit'],[type='button']">
               <button>
                   <xsl:copy-of select="@*" />
                   <xsl:choose>
-                      <xsl:when css:test=".searchButton, .context">
-                          <xsl:attribute name="class">btn btn-primary</xsl:attribute>
+                      <xsl:when css:test=".delete, .destructive, [value='Delete']">
+                          <xsl:attribute name="class"><xsl:value-of select="./@class" /> btn btn-danger</xsl:attribute>
                       </xsl:when>
-                      <xsl:when css:test=".delete">
-                          <xsl:attribute name="class">btn btn-danger</xsl:attribute>
+                      <xsl:when css:test=".searchButton, .context">
+                          <xsl:attribute name="class"><xsl:value-of select="./@class" /> btn btn-primary</xsl:attribute>
+                      </xsl:when>
+                      <xsl:when css:test=".standalone">
+                          <xsl:attribute name="class"><xsl:value-of select="./@class" /> btn btn-info</xsl:attribute>
                       </xsl:when>
                       <xsl:otherwise>
-                          <xsl:attribute name="class">btn</xsl:attribute>
+                        <xsl:attribute name="class"><xsl:value-of select="./@class" /> btn</xsl:attribute>
                       </xsl:otherwise>
                   </xsl:choose>
                   <xsl:value-of select="./@value"/>
