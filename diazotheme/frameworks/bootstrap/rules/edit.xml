@@ -91,7 +91,7 @@
           <div class="accordion-group">
             <div class="accordion-heading">
               <a class="accordion-toggle" data-toggle="collapse">
-                <xsl:attribute name="data-parent">#<xsl:value-of select="../@id"/></xsl:attribute>
+                <xsl:attribute name="data-parent">#<xsl:value-of select="ancestor::dl[1]/@id"/></xsl:attribute>
                 <xsl:attribute name="href">#<xsl:value-of select="./@id"/></xsl:attribute>
                 <xsl:value-of select="./text()"/>
               </a>
@@ -123,7 +123,7 @@
           <div class="accordion-group">
             <div class="accordion-heading">
               <a class="accordion-toggle" data-toggle="collapse">
-                <xsl:attribute name="data-parent">#<xsl:value-of select="../@id"/></xsl:attribute>
+                <xsl:attribute name="data-parent">#<xsl:value-of select="./ancestor::form[1]/@id"/></xsl:attribute>
                 <xsl:attribute name="href">#<xsl:value-of select="./@id"/></xsl:attribute>
                 <xsl:value-of select="./legend"/>
               </a>

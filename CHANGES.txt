@@ -4,6 +4,10 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: ensure accordions are constructed in such a way that 
+  the ``parent`` data attribute is populated for nested elements. Previously,
+  this would only function if the structure was ``form > fieldset``.
+  [davidjb]
 - Bootstrap: translate workflow states into textual emphasis classes.
   [davidjb] 
 - Bootstrap: style album/thumbnail views for folders with Bootstrap markup.
