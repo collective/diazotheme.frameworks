@@ -6,9 +6,53 @@
 
   <!-- Forms -->
   <replace css:content=".formHelp">
-      <div class="formHelp muted">
+      <div>
+          <xsl:copy-of select="@*" />
+          <xsl:attribute name="class"><xsl:value-of select="./@class" /> help-block</xsl:attribute>
           <xsl:apply-templates select="./*|./text()"/>
       </div>
+  </replace>
+
+  <replace content="//span[@class='required']">
+    <span class="required text-info">(Required)</span>
+  </replace>
+
+  <replace content="//*[contains(@class, 'fieldRequired')]/@class">
+    <xsl:attribute name="class"><xsl:value-of select="." /> text-info</xsl:attribute>
+  </replace>
+
+  <replace content="//div[@class='formQuestion label']/@class">
+    <xsl:attribute name="class">formQuestion</xsl:attribute>
+  </replace>
+
+
+  <replace css:content="form .field">
+    <div>
+      <xsl:copy-of select="@*" />
+      <xsl:choose>
+         <xsl:when css:test=".error">
+           <xsl:attribute name="class"><xsl:value-of select="./@class" /> control-group clearfix well well-small</xsl:attribute>
+         </xsl:when>
+         <xsl:otherwise>
+           <xsl:attribute name="class"><xsl:value-of select="./@class" /> control-group clearfix</xsl:attribute>
+         </xsl:otherwise>
+      </xsl:choose>
+      <div class="controls">
+        <xsl:apply-templates select="./*"/>
+      </div>
+    </div>
+        <!--
+      <label>
+        <xsl:copy-of select="./label/@*" />
+        <xsl:attribute name="class"><xsl:value-of select="./label/@class" /> control-label</xsl:attribute>
+        <xsl:apply-templates select="./label/text()"/>
+        <xsl:apply-templates select="./span[@class='fieldRequired']"/>
+      </label>
+      <div class="controls">
+        <xsl:apply-templates select="./*[not(self::label) and not(@class='fieldRequired')]"/>
+      </div>
+        -->
+
   </replace>
 
   <replace css:content="input">

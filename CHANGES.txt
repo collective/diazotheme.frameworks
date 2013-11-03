@@ -4,6 +4,9 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: tidy form field markup to make fields clear, especially when
+  errors have occurred.
+  [davidjb]
 - Bootstrap: ensure accordions are constructed in such a way that 
   the ``parent`` data attribute is populated for nested elements. Previously,
   this would only function if the structure was ``form > fieldset``.
