@@ -39,4 +39,26 @@
       </div>
   </replace>
 
+  <!-- Thumbnail/album folder view -->
+  <replace css:content="#content-core" css:if-content="body.template-atct_album_view">
+    <style>
+      .photoAlbumEntryWrapper { display:block; min-height:128px; }
+    </style>
+    <div>
+      <xsl:copy-of select="@*" />
+      <ul class="thumbnails">
+        <xsl:for-each css:select=".photoAlbumEntry">
+          <li class="span3">
+            <a>
+              <xsl:copy-of select="./a/@*" />
+              <xsl:attribute name="class"><xsl:value-of select="." /> thumbnail</xsl:attribute>
+              <xsl:apply-templates select="./a/*" />
+            </a>
+          </li>
+        </xsl:for-each>
+      </ul>
+      <xsl:apply-templates select="./*[not(@class='photoAlbumEntry')]"/>
+    </div>
+  </replace>
+
 </rules>
