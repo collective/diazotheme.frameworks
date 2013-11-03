@@ -55,8 +55,6 @@
           <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
-          <li><xsl:copy-of select="./dt/a"/></li>
-          <li class="divider"></li>
           <xsl:apply-templates css:select="li"/>
         </ul>
       </li>
