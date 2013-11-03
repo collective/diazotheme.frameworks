@@ -4,6 +4,21 @@
          xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
          xmlns:xi="http://www.w3.org/2001/XInclude">
 
+  <!-- User personal dashboard -->
+  <replace content="//*[@id='dashboard']">
+    <div>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class">row clearfix</xsl:attribute>
+      <xsl:for-each select="./*[starts-with(@id,'dashboard-')]">
+        <div>
+          <xsl:copy-of select="@*" />
+          <xsl:attribute name="class">span3</xsl:attribute>
+          <xsl:apply-templates select="./*"/>
+        </div>
+      </xsl:for-each>
+    </div>
+  </replace>
+
   <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' portlet-action ')]/@class">
     <xsl:attribute name="class"><xsl:value-of select="."/> pull-left</xsl:attribute> 
   </replace>

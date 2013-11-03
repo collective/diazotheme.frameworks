@@ -4,6 +4,8 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: apply columnar classes for user dashboards. 
+  [davidjb]
 - Bootstrap: remove extraneous username from the personal tools menu. 
   [davidjb]
 - Bootstrap: expand selectors for different button types.
