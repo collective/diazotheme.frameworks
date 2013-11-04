@@ -4,6 +4,8 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: add classes for categories (tags) for content.
+  [davidjb]
 - Bootstrap: apply pagination classes for listing bars (such as for folders or
   search results). 
   [davidjb]

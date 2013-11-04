@@ -61,4 +61,12 @@
     </div>
   </replace>
 
+  <!-- Categories/tags -->
+  <replace content="//*[@id='category']/@class">
+    <xsl:attribute name="class"><xsl:value-of select="." /> pull-right</xsl:attribute>
+  </replace>
+  <replace content="//*[@class='link-category']/@class">
+    <xsl:attribute name="class"><xsl:value-of select="." /> label</xsl:attribute>
+  </replace>
+
 </rules>
