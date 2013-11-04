@@ -6,7 +6,7 @@
 
   <!-- Framework styles -->
   <replace css:theme="link[href*='bootstrap.css']">
-      <link href="++theme++bootstrap-framework/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="{$base}/++theme++bootstrap-framework/css/bootstrap.min.css" rel="stylesheet"/>
   </replace>
 
   <!-- Add to the style tag -->

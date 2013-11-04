@@ -4,6 +4,10 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: Modify all CSS and JS resources to use Plone's ``base`` variable,
+  supplied by plone.app.theming. Without this, relative URLs result in the
+  same resources being loaded on different URLs for every page request.
+  [davidjb]
 - Bootstrap: apply columnar classes for user dashboards. 
   [davidjb]
 - Bootstrap: remove extraneous username from the personal tools menu. 
