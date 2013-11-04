@@ -53,4 +53,18 @@
     </ul>
   </replace>
 
+  <replace css:content=".listingBar">
+    <div>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class"><xsl:value-of select="./@class" /> pagination</xsl:attribute>
+      <ul>
+        <xsl:for-each select="./*">
+          <li>
+            <xsl:apply-templates select="." />
+          </li>
+        </xsl:for-each>
+      </ul>
+    </div>
+  </replace>
+
 </rules>
