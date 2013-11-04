@@ -11,6 +11,7 @@
 
   <!-- Add to the style tag -->
   <after css:theme-children="head style">
+    <xsl:text disable-output-escaping="yes">
       button + button { margin-left: .5em; }
       .ploneCalendar { width: 100%; }
       .ploneCalendar th { text-align: left; }
@@ -30,6 +31,7 @@
       #portal-columns, #portal-header { margin-bottom: 2em; }
       #kss-spinner { display: none; }
       input[type='checkbox'] { margin-right: .5em; }
+    </xsl:text>
   </after>
 
 </rules>
