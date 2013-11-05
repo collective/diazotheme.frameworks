@@ -4,6 +4,10 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: add original classes for input (text) fields into transformed
+  content. This fixes issues with forms (eg ``folder_constraintypes_form``)
+  that rely on this for JavaScript.
+  [davidjb]
 - Bootstrap: add classes for categories (tags) for content.
   [davidjb]
 - Bootstrap: apply pagination classes for listing bars (such as for folders or
