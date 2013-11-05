@@ -20,7 +20,7 @@
                       <xsl:apply-templates select=".//*[@id='portal-personaltools-wrapper']/*"/>
                       <form class="navbar-search pull-right">
                           <xsl:copy-of select=".//*[@id='portal-searchbox']/form/@*" />
-                          <input class="search-query">
+                          <input class="search-query input-medium">
                               <xsl:attribute name="placeholder">
                                 <xsl:value-of select=".//label[@for='searchGadget']/text()"/>
                               </xsl:attribute> 

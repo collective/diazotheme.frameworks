@@ -4,6 +4,9 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: reduce size of search input to allow for increased header
+  space.
+  [davidjb]
 - Bootstrap: add original classes for input (text) fields into transformed
   content. This fixes issues with forms (eg ``folder_constraintypes_form``)
   that rely on this for JavaScript.
