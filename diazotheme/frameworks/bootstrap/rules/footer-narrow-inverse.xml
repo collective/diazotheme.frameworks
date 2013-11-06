@@ -15,13 +15,19 @@
   <replace css:content="#portal-colophon">
       <div class="navbar">
           <div class="navbar-inner">
-              <a class="brand">
-                  <xsl:copy-of select=".//a[1]/@*"/>
-                  <xsl:value-of select=".//a[1]/text()"/>
-              </a>
-              <ul class="nav pull-right">
-                  <xsl:apply-templates select="../ul[1]/li"/>
-              </ul>
+            <ul class="nav">
+            <xsl:for-each select=".//li">
+              <li>
+                <xsl:if test="position() = 1">
+                  <xsl:attribute name="class"><xsl:value-of select="./@class" /> brand</xsl:attribute>
+                </xsl:if>
+                <xsl:apply-templates select="./child::node()"/>
+              </li>
+            </xsl:for-each>
+            </ul>
+            <ul class="nav pull-right">
+              <xsl:apply-templates select="//*[@id='portal-siteactions']/li"/>
+            </ul>
           </div>
       </div>
   </replace>

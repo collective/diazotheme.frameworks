@@ -4,6 +4,10 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: improve flexibility of footer to handle multiple list items
+  and include on output page. Backwards compatibility maintained
+  with original styling.
+  [davidjb]
 - Bootstrap: reduce size of search input to allow for increased header
   space.
   [davidjb]
