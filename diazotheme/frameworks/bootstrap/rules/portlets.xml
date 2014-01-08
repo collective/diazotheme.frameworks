@@ -27,7 +27,11 @@
     <xsl:attribute name="class"><xsl:value-of select="."/> well well-small</xsl:attribute> 
   </replace>
 
-  <replace css:content=".portlet:not(.managedPortlet)">
+  <replace content="//*[@class = 'portlet toc']/@class">
+    <xsl:attribute name="class"><xsl:value-of select="."/> pull-right well well-large</xsl:attribute> 
+  </replace>
+
+  <replace css:content=".portlet:not(.managedPortlet):not(.toc)">
       <xsl:if css:test=".portletHeader">
           <h2><xsl:apply-templates css:select=".portletHeader > *"/></h2>
       </xsl:if>
@@ -123,11 +127,14 @@
       </article>
   </replace>
 
-  <strip css:content=".portletHeader"/>
-  <strip css:content=".portletLogin br"/>
-  <strip css:content="span[class*='portlet']"/>
+  <!-- These cause issues with certain portlets (eg Table of Contents) -->
+  <!--
+  <strip css:content=".portletHeader" />
   <strip css:content=".portletItem"/>
   <strip css:content=".portletFooter"/>
+  -->
+  <strip css:content=".portletLogin br"/>
+  <strip css:content="span[class*='portlet']"/>
   
   <replace css:content="span.portletItemDetails">
       <small class="portletItemDetails muted">
