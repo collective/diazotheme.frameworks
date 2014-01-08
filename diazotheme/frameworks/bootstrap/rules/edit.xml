@@ -148,4 +148,22 @@
     </form>
   </replace>
 
+  <replace css:content=".historyTools">
+    <div>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class"><xsl:value-of select="./@class" /> pull-right</xsl:attribute>
+      <ul class="unstyled">
+        <xsl:apply-templates select="./ul/*"/>
+      </ul>
+    </div>
+  </replace>
+
+  <replace css:content=".historyRecord">
+    <div>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class"><xsl:value-of select="./@class" /> well</xsl:attribute>
+      <xsl:apply-templates select="./*"/>
+    </div>
+  </replace>
+
 </rules>
