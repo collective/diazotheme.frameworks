@@ -45,7 +45,7 @@
       </replace>
       <replace css:content=".documentDescription">
           <p class="lead">
-              <xsl:apply-templates select="./text()"/>
+              <xsl:apply-templates select="./text()|./*"/>
           </p>
       </replace>
   </rules>
