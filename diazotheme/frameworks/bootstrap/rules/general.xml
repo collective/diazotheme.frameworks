@@ -7,7 +7,9 @@
   <strip css:content="#visual-portal-wrapper"/>
 
   <replace css:content=".visualClear">
-      <div class="clearfix">
+      <div>
+          <xsl:copy-of select="@*" />
+          <xsl:attribute name="class"><xsl:value-of select="./@class" /> clearfix</xsl:attribute>
           <xsl:apply-templates select="./text()|./*" />
       </div>
   </replace>
