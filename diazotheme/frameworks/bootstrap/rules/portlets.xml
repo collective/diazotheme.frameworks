@@ -138,7 +138,7 @@
   
   <replace css:content="span.portletItemDetails">
       <small class="portletItemDetails muted">
-          <xsl:apply-templates select="./text()" />
+          <xsl:apply-templates select="./text()|./*" />
       </small>
   </replace>
 

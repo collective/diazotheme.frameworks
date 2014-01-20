@@ -8,7 +8,7 @@
 
   <replace css:content=".visualClear">
       <div class="clearfix">
-          <xsl:apply-templates select="./text()" />
+          <xsl:apply-templates select="./text()|./*" />
       </div>
   </replace>
   
