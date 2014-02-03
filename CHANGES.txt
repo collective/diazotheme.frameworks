@@ -4,6 +4,8 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: fix replacement rule for responsive CSS.
+  [davidjb]
 - Bootstrap: improve flexibility of footer to handle multiple list items
   and include on output page. Backwards compatibility maintained
   with original styling.

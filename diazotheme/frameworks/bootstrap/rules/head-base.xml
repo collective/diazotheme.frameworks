@@ -41,7 +41,7 @@
   </replace>
 
   <!-- Links -->
-  <replace css:theme="link[href='../assets/css/bootstrap-responsive.css']">
+  <replace css:theme="link[href*='bootstrap-responsive.css']">
     <link href="{$base}/++theme++bootstrap-framework/css/bootstrap-responsive.min.css" rel="stylesheet"/>
   </replace> 
   <replace css:theme="link[rel='shortcut icon']" css:content="link[rel='shortcut icon']" />
