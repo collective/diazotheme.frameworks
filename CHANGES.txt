@@ -4,6 +4,8 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: prevent search dropdown menu from closing on click.
+  [davidjb]
 - Bootstrap: fix replacement rule for responsive CSS.
   [davidjb]
 - Bootstrap: improve flexibility of footer to handle multiple list items

@@ -91,7 +91,7 @@
 
   <rules css:if-content="body.template-search">
       <replace css:content=".actionMenu">
-          <div class="btn-group">
+          <div class="btn-group search-menu">
               <button class="btn">
                   <xsl:value-of select="./dt/a"/>
               </button>
@@ -135,6 +135,15 @@
                   </li>
               </ul>
           </div>
+        <script>
+          (function($){
+             $(document).ready(function() {
+                $('.search-menu .dropdown-menu').click(function(event) { 
+                    event.stopPropagation(); 
+                });
+             });
+          })(jQuery);
+        </script>
       </replace>
       <replace css:content="#searchResultsSort">
           <div class="clearfix">
