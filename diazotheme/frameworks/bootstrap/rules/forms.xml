@@ -13,7 +13,7 @@
       </div>
   </replace>
 
-  <replace content="//span[@class='required']">
+  <replace css:content="span.required">
     <span class="required text-info">(Required)</span>
   </replace>
 
