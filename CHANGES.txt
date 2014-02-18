@@ -4,6 +4,10 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: allow ++resource++ CSS from Plone to be included in themed
+  pages.  This allows for most non-default CSS (such as add-ons) to be 
+  included in pages.
+  [davidjb]
 - Bootstrap: prevent search dropdown menu from closing on click.
   [davidjb]
 - Bootstrap: fix replacement rule for responsive CSS.
