@@ -4,6 +4,9 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: reduce empty page space on edit by combining content view
+  tabs and actions menus.
+  [davidjb]
 - Bootstrap: ensure portal-columns are ordered to reflect left-to-right
   layout from Plone.
   [davidjb]

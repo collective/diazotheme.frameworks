@@ -18,14 +18,30 @@
   </replace>
 
   <drop css:content="#edit-bar h5"/>
+  <drop css:content=".contentActions .arrowDownAlternative"/>
 
   <replace css:content="#content-views">
       <ul class="nav nav-tabs">
           <xsl:apply-templates select="./*"/>
+          <li class="pull-right">
+          <xsl:for-each select="//*[@id='edit-bar']/*[contains(@class, 'contentActions')]/ul/li">
+            <div class="btn-group">
+                <button class="btn">
+                    <xsl:apply-templates select=".//dt/a/span"/>
+                </button>
+                <button class="btn dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <xsl:apply-templates select=".//dd/ul/li"/>
+                </ul>
+            </div>
+          </xsl:for-each>    
+          </li>
       </ul>        
   </replace>
 
-  <drop css:content=".contentActions .arrowDownAlternative"/>
+  <drop css:content="#edit-bar > .contentActions"/>
 
   <replace css:content=".actionSeparator">
       <li class="divider"></li>
@@ -45,25 +61,6 @@
     <xsl:attribute name="class"><xsl:value-of select="." /> text-warning</xsl:attribute>
   </replace>
 
-  <replace css:content="#edit-bar > .contentActions">
-      <div class="clearfix">
-          <div class="btn-toolbar pull-right">
-          <xsl:for-each select="./ul/li">
-            <div class="btn-group">
-                <button class="btn">
-                    <xsl:apply-templates select=".//dt/a/span"/>
-                </button>
-                <button class="btn dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <xsl:apply-templates select=".//dd/ul/li"/>
-                </ul>
-            </div>
-          </xsl:for-each>    
-          </div>
-      </div>
-  </replace>
 
   <replace css:content=".criteria .querywidget">
     <div class="btn-group pull-left">
