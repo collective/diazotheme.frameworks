@@ -4,6 +4,9 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: ensure portal-columns are ordered to reflect left-to-right
+  layout from Plone.
+  [davidjb]
 - Bootstrap: allow collective.js.jqueryui CSS from Plone to be included
   in themed pages.
   [davidjb]

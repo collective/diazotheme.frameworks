@@ -8,7 +8,9 @@
       <section id="portal-columns">
           <div class="container">
               <div class="row">
-                  <xsl:apply-templates select="./*"/>
+                <xsl:apply-templates select="./*[@id='portal-column-one']"/>
+                <xsl:apply-templates select="./*[@id='portal-column-content']"/>
+                <xsl:apply-templates select="./*[@id='portal-column-two']"/>
               </div>
           </div>          
       </section>
