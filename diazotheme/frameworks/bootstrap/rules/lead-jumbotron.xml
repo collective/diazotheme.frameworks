@@ -26,7 +26,7 @@
           </section>
           
           <xsl:choose>
-              <xsl:when test="//*[@id='portal-column-one'] and not(//*[@id='portal-column-one'])">
+              <xsl:when test="//*[@id='portal-column-one'] and not(//*[@id='portal-column-two'])">
                   <hr />
                   <aside class="row-fluid marketing">
                       <div class="span12">
