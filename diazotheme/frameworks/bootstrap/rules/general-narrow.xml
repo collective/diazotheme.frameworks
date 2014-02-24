@@ -11,11 +11,11 @@
   </replace>
 
   <replace css:content=".visualClear">
-      <div>
+      <xsl:copy>
           <xsl:copy-of select="@*" />
           <xsl:attribute name="class"><xsl:value-of select="./@class" /> clearfix</xsl:attribute>
           <xsl:apply-templates select="./text()|./*" />
-      </div>
+      </xsl:copy>
   </replace>
   
   <strip css:content=".portalMessage dd"/>
