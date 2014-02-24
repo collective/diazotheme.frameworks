@@ -69,4 +69,22 @@
     <xsl:attribute name="class"><xsl:value-of select="." /> label</xsl:attribute>
   </replace>
 
+  <!-- Discussions -->
+  <replace content="//div[contains(concat(' ', normalize-space(@class), ' '), ' discussion ')]/@class">
+    <xsl:attribute name="class"><xsl:value-of select="." /> well</xsl:attribute>
+  </replace>
+  <replace css:content="#commenting > fieldset > legend">
+    <h3>
+      <xsl:copy-of select="@*" />
+      <xsl:apply-templates select="./text()|./*" />
+    </h3>
+  </replace>
+  <replace content="//div[@class='commentImage']//img">
+    <xsl:copy>
+      <xsl:attribute name="width">32</xsl:attribute>
+      <xsl:copy-of select="@*[not(local-name() = 'height')]" />
+      <xsl:apply-templates />
+    </xsl:copy>
+  </replace>
+
 </rules>
