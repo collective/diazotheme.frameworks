@@ -20,6 +20,37 @@
     </ul>
   </replace> 
 
+  <!-- Visual editor styles -->
+  <replace content="//img[contains(concat(' ', normalize-space(@class), ' '), ' image-left ')]/@class">
+    <xsl:attribute name="class"><xsl:value-of select="." /> pull-left</xsl:attribute>
+  </replace>
+  <replace content="//img[contains(concat(' ', normalize-space(@class), ' '), ' image-right ')]/@class">
+    <xsl:attribute name="class"><xsl:value-of select="." /> pull-right</xsl:attribute>
+  </replace>
+  <replace content="//p[contains(concat(' ', normalize-space(@class), ' '), ' callout ')]">
+    <blockquote>
+      <xsl:copy-of select="."/>
+    </blockquote>
+  </replace>
+  <replace css:content="blockquote.pullquote">
+    <xsl:copy>
+      <xsl:attribute name="class"><xsl:value-of select="./@class" /> pull-right</xsl:attribute>
+      <xsl:apply-templates select="./text()|./*"/>
+    </xsl:copy>
+  </replace>
+  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' discreet ')]/@class">
+    <xsl:attribute name="class"><xsl:value-of select="." /> muted</xsl:attribute>
+  </replace>
+  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' visualHighlight ')]/@class">
+    <xsl:attribute name="class"><xsl:value-of select="." /> text-info</xsl:attribute>
+  </replace>
+  <replace content="//table[@class='plain']/@class">
+    <xsl:attribute name="class">table table-bordered</xsl:attribute>
+  </replace>
+  <replace content="//table[@class='invisible']/@class">
+    <xsl:attribute name="class">table</xsl:attribute>
+  </replace>
+
   <!-- Tiles -->
   <replace css:content=".tileItem">
       <div class="media">

@@ -4,6 +4,9 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: theme content being generated from Plone's visual editor
+  in line with Bootstrap classes.
+  [davidjb]
 - Bootstrap: theme plone.app.discussion page elements for Bootstrap.
   [davidjb]
 - Bootstrap: adjust form markup to handle checkboxes inside "label" div
