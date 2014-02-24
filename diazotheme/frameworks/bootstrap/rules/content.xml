@@ -22,10 +22,10 @@
 
   <!-- Visual editor styles -->
   <replace content="//img[contains(concat(' ', normalize-space(@class), ' '), ' image-left ')]/@class">
-    <xsl:attribute name="class"><xsl:value-of select="." /> pull-left</xsl:attribute>
+    <xsl:attribute name="class"><xsl:value-of select="." /> well pull-left</xsl:attribute>
   </replace>
   <replace content="//img[contains(concat(' ', normalize-space(@class), ' '), ' image-right ')]/@class">
-    <xsl:attribute name="class"><xsl:value-of select="." /> pull-right</xsl:attribute>
+    <xsl:attribute name="class"><xsl:value-of select="." /> well pull-right</xsl:attribute>
   </replace>
   <replace content="//p[contains(concat(' ', normalize-space(@class), ' '), ' callout ')]">
     <blockquote>
@@ -116,6 +116,11 @@
       <xsl:copy-of select="@*[not(local-name() = 'height')]" />
       <xsl:apply-templates />
     </xsl:copy>
+  </replace>
+
+  <!-- News views -->
+  <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' newsImageContainer ')]/@class">
+    <xsl:attribute name="class"><xsl:value-of select="." /> pull-right well</xsl:attribute>
   </replace>
 
 </rules>
