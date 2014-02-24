@@ -25,6 +25,11 @@
     <xsl:attribute name="class">formQuestion</xsl:attribute>
   </replace>
 
+  <drop content="//label/span[@class='label']/@class" />
+
+  <replace content="//div[@class='field']//div[@class='label']/@class">
+    <xsl:attribute name="class"><xsl:value-of select="." /> label-info</xsl:attribute>
+  </replace>.field > div.label">
 
   <replace css:content="form .field">
     <div>
@@ -81,6 +86,9 @@
               <input>
                   <xsl:copy-of select="@*" />
                   <xsl:attribute name="class"><xsl:value-of select="./@class" /> pull-left</xsl:attribute>
+                  <xsl:if css:test=".label">
+                    <xsl:attribute name="class">pull-left</xsl:attribute>
+                  </xsl:if>
               </input>
           </xsl:when>
           <xsl:otherwise>

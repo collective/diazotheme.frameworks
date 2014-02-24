@@ -4,6 +4,9 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: adjust form markup to handle checkboxes inside "label" div
+  elements not being displayed due to Bootstrap styling.
+  [davidjb]
 - Bootstrap: reduce empty page space on edit by combining content view
   tabs and actions menus.
   [davidjb]
