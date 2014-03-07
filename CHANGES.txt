@@ -4,9 +4,12 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: import form theme handling. Port CSS-applied styling
+  for field widths into Bootstrap-style classes. This improves
+  the display of textareas, inputs, and title/description fields.
+  [davidjb]
 - Bootstrap: theme content being generated from Plone's visual editor
   in line with Bootstrap classes.
-  [davidjb]
 - Bootstrap: theme plone.app.discussion page elements for Bootstrap.
   [davidjb]
 - Bootstrap: adjust form markup to handle checkboxes inside "label" div

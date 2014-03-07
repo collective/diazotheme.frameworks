@@ -6,11 +6,11 @@
 
   <!-- Forms -->
   <replace css:content=".formHelp">
-      <div>
-          <xsl:copy-of select="@*" />
-          <xsl:attribute name="class"><xsl:value-of select="./@class" /> help-block</xsl:attribute>
-          <xsl:apply-templates select="./*|./text()"/>
-      </div>
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class"><xsl:value-of select="./@class" /> help-block</xsl:attribute>
+      <xsl:apply-templates select="./*|./text()"/>
+    </xsl:copy>
   </replace>
 
   <replace css:content="span.required">
@@ -29,10 +29,18 @@
 
   <replace content="//div[@class='field']//div[@class='label']/@class">
     <xsl:attribute name="class"><xsl:value-of select="." /> label-info</xsl:attribute>
-  </replace>.field > div.label">
+  </replace>
+
+  <replace css:content="#content textarea, textarea#form.description">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class"><xsl:value-of select="./@class" /> input-block-level</xsl:attribute>
+      <xsl:apply-templates select="./*|./text()"/>
+    </xsl:copy>
+  </replace>
 
   <replace css:content="form .field">
-    <div>
+    <xsl:copy>
       <xsl:copy-of select="@*" />
       <xsl:choose>
          <xsl:when css:test=".error">
@@ -45,7 +53,7 @@
       <div class="controls">
         <xsl:apply-templates select="./*"/>
       </div>
-    </div>
+    </xsl:copy>
         <!--
       <label>
         <xsl:copy-of select="./label/@*" />
@@ -83,13 +91,20 @@
               </button>
           </xsl:when>
           <xsl:when css:test="[type='checkbox'],[type='radio']">
-              <input>
+              <xsl:copy>
                   <xsl:copy-of select="@*" />
                   <xsl:attribute name="class"><xsl:value-of select="./@class" /> pull-left</xsl:attribute>
                   <xsl:if css:test=".label">
                     <xsl:attribute name="class">pull-left</xsl:attribute>
                   </xsl:if>
-              </input>
+              </xsl:copy>
+          </xsl:when>
+          <xsl:when css:test="[type='text'][name$='.title'],#title">
+              <xsl:copy>
+                  <xsl:copy-of select="@*" />
+                  <xsl:attribute name="class"><xsl:value-of select="./@class" /> input-block-level</xsl:attribute>
+                  <xsl:apply-templates select="./*|./text()"/>
+              </xsl:copy>
           </xsl:when>
           <xsl:otherwise>
               <xsl:copy-of select="."/>
