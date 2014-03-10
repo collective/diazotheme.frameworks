@@ -19,6 +19,7 @@
             <ul class="nav">
             <xsl:for-each select=".//li">
               <li>
+                <xsl:copy-of select="@*" />
                 <xsl:if test="position() = 1">
                   <xsl:attribute name="class"><xsl:value-of select="./@class" /> brand</xsl:attribute>
                 </xsl:if>

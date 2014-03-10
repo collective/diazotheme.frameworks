@@ -4,6 +4,8 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: apply existing attributes from list items in colophon.
+  [davidjb]
 - Bootstrap: import form theme handling. Port CSS-applied styling
   for field widths into Bootstrap-style classes. This improves
   the display of textareas, inputs, and title/description fields.
