@@ -9,7 +9,7 @@
     <xsl:copy>
       <xsl:copy-of select="@*" />
       <xsl:attribute name="class"><xsl:value-of select="./@class" /> help-block</xsl:attribute>
-      <xsl:apply-templates select="./*|./text()"/>
+      <xsl:apply-templates />
     </xsl:copy>
   </replace>
 
@@ -35,7 +35,7 @@
     <xsl:copy>
       <xsl:copy-of select="@*" />
       <xsl:attribute name="class"><xsl:value-of select="./@class" /> input-block-level</xsl:attribute>
-      <xsl:apply-templates select="./*|./text()"/>
+      <xsl:apply-templates />
     </xsl:copy>
   </replace>
 
@@ -51,7 +51,7 @@
          </xsl:otherwise>
       </xsl:choose>
       <div class="controls">
-        <xsl:apply-templates select="./*"/>
+        <xsl:apply-templates />
       </div>
     </xsl:copy>
         <!--
@@ -103,7 +103,7 @@
               <xsl:copy>
                   <xsl:copy-of select="@*" />
                   <xsl:attribute name="class"><xsl:value-of select="./@class" /> input-block-level</xsl:attribute>
-                  <xsl:apply-templates select="./*|./text()"/>
+                  <xsl:apply-templates />
               </xsl:copy>
           </xsl:when>
           <xsl:otherwise>

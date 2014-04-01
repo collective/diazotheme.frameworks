@@ -8,9 +8,9 @@
       <footer id="portal-footer-wrapper">
           <div class="container">
               <div class="row muted">
-                  <xsl:apply-templates select="./*"/>
+                  <xsl:apply-templates />
               </div>
-          </div>          
+          </div>
       </footer>
   </replace>
   <replace css:content="#portal-colophon">

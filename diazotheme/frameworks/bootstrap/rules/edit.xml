@@ -13,7 +13,7 @@
   <replace css:content="table.listing">
     <table class="table table-striped">
       <xsl:copy-of select="./@*[local-name() != 'class']"/>
-      <xsl:apply-templates select="./*"/>
+      <xsl:apply-templates />
     </table>
   </replace>
 
@@ -22,7 +22,7 @@
 
   <replace css:content="#content-views">
       <ul class="nav nav-tabs">
-          <xsl:apply-templates select="./*"/>
+          <xsl:apply-templates />
           <li class="pull-right">
           <xsl:for-each select="//*[@id='edit-bar']/*[contains(@class, 'contentActions')]/ul/li">
             <div class="btn-group">
@@ -46,7 +46,7 @@
   <replace css:content=".actionSeparator">
       <li class="divider"></li>
       <li>
-          <xsl:apply-templates select="./*"/>
+          <xsl:apply-templates />
       </li>
   </replace>
 
@@ -159,7 +159,7 @@
     <div>
       <xsl:copy-of select="@*" />
       <xsl:attribute name="class"><xsl:value-of select="./@class" /> well</xsl:attribute>
-      <xsl:apply-templates select="./*"/>
+      <xsl:apply-templates />
     </div>
   </replace>
 

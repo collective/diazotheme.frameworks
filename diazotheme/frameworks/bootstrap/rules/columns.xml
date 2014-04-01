@@ -6,7 +6,7 @@
 
   <replace content="//*[@id='portal-column-one']|//*[@id='portal-column-two']">
       <aside class="span3">
-          <xsl:apply-templates select="./*"/>
+          <xsl:apply-templates />
       </aside>
   </replace>
 
@@ -23,7 +23,7 @@
                   <xsl:attribute name="class">span12</xsl:attribute>
               </xsl:otherwise>
           </xsl:choose>
-          <xsl:apply-templates select="./*"/>
+          <xsl:apply-templates />
       </article>
   </replace>
 

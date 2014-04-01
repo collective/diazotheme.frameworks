@@ -24,7 +24,7 @@
                   <xsl:apply-templates select="//*[@id='portal-column-content']/*"/>
               </article>
           </section>
-          
+
           <xsl:choose>
               <xsl:when test="//*[@id='portal-column-one'] and not(//*[@id='portal-column-two'])">
                   <hr />
@@ -70,17 +70,17 @@
                       <xsl:apply-templates select="./*[@id='portal-column-content']"/>
                       <xsl:apply-templates select="./*[@id='portal-column-two']"/>
                   </div>
-              </div>          
+              </div>
           </section>
       </replace>
       <replace css:content=".documentFirstHeading">
           <h1>
-              <xsl:apply-templates select="./text()|./*"/>
+              <xsl:apply-templates />
           </h1>
       </replace>
       <replace css:content=".documentDescription">
           <p class="lead">
-              <xsl:apply-templates select="./text()|./*"/>
+              <xsl:apply-templates />
           </p>
       </replace>
   </rules>

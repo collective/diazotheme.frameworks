@@ -12,7 +12,7 @@
                       <xsl:copy-of css:select=".documentFirstHeading"/>
                       <xsl:copy-of css:select=".documentDescription"/>
                   </div>
-              </div>          
+              </div>
           </section>
           <section id="portal-columns">
               <div class="container">
@@ -21,7 +21,7 @@
                       <xsl:apply-templates select="./*[@id='portal-column-content']"/>
                       <xsl:apply-templates select="./*[@id='portal-column-two']"/>
                   </div>
-              </div>          
+              </div>
           </section>
       </replace>
       <drop css:content=".documentFirstHeading"/>
@@ -37,19 +37,19 @@
                       <xsl:apply-templates select="./*[@id='portal-column-content']"/>
                       <xsl:apply-templates select="./*[@id='portal-column-two']"/>
                   </div>
-              </div>          
+              </div>
           </section>
       </replace>
       <replace css:content=".documentFirstHeading">
           <div class="page-header">
               <h1>
-                  <xsl:apply-templates select="./text()|./*"/>
+                  <xsl:apply-templates />
               </h1>
           </div>
       </replace>
       <replace css:content=".documentDescription">
           <p class="lead">
-              <xsl:apply-templates select="./text()|./*"/>
+              <xsl:apply-templates />
           </p>
       </replace>
   </rules>

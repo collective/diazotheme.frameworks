@@ -40,7 +40,7 @@
       <header id="portal-top">
           <div class="container">
               <div class="row">
-                  <xsl:apply-templates select="./*"/>
+                  <xsl:apply-templates />
               </div>
           </div>          
       </header>

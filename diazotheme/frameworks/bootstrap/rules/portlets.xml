@@ -13,7 +13,7 @@
         <div>
           <xsl:copy-of select="@*" />
           <xsl:attribute name="class">span3</xsl:attribute>
-          <xsl:apply-templates select="./*"/>
+          <xsl:apply-templates />
         </div>
       </xsl:for-each>
     </div>
@@ -46,7 +46,7 @@
       <ul class="nav nav-list">
           <xsl:for-each css:select=".portletItem">
               <li>
-                  <xsl:apply-templates select="./*"/>
+                  <xsl:apply-templates />
               </li>
           </xsl:for-each>
       </ul>
@@ -137,7 +137,7 @@
 
   <replace css:content=".portletWrapper">
       <article>
-          <xsl:apply-templates select="./*" />
+          <xsl:apply-templates />
       </article>
   </replace>
 
@@ -152,7 +152,7 @@
   
   <replace css:content="span.portletItemDetails">
       <small class="portletItemDetails muted">
-          <xsl:apply-templates select="./text()|./*" />
+          <xsl:apply-templates />
       </small>
   </replace>
 

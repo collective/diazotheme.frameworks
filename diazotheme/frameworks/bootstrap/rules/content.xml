@@ -35,7 +35,7 @@
   <replace css:content="blockquote.pullquote">
     <xsl:copy>
       <xsl:attribute name="class"><xsl:value-of select="./@class" /> pull-right</xsl:attribute>
-      <xsl:apply-templates select="./text()|./*"/>
+      <xsl:apply-templates />
     </xsl:copy>
   </replace>
   <replace content="//*[contains(concat(' ', normalize-space(@class), ' '), ' discreet ')]/@class">
@@ -107,7 +107,7 @@
   <replace css:content="#commenting > fieldset > legend">
     <h3>
       <xsl:copy-of select="@*" />
-      <xsl:apply-templates select="./text()|./*" />
+      <xsl:apply-templates />
     </h3>
   </replace>
   <replace content="//div[@class='commentImage']//img">

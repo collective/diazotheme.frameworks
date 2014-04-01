@@ -10,7 +10,7 @@
       <xsl:copy>
           <xsl:copy-of select="@*" />
           <xsl:attribute name="class"><xsl:value-of select="./@class" /> clearfix</xsl:attribute>
-          <xsl:apply-templates select="./text()|./*" />
+          <xsl:apply-templates />
       </xsl:copy>
   </replace>
   
@@ -18,40 +18,30 @@
   <replace css:content=".portalMessage" >
     <xsl:choose>
         <xsl:when css:test=".portalMessage[style]"/>
-        <xsl:when css:test=".portalMessage.info">
-            <div class="alert alert-block alert-info">
-                <button type="button" class="close" data-dismiss="alert">×</button>
-                <h4><xsl:apply-templates select="./dt/*"/></h4>
-                <xsl:apply-templates select="./*"/>
-            </div>                
-        </xsl:when>
-        <xsl:when css:test=".portalMessage.error">
-            <div class="alert alert-block alert-error">
-                <button type="button" class="close" data-dismiss="alert">×</button>
-                <h4><xsl:apply-templates select="./dt/*"/></h4>
-                <xsl:apply-templates select="./*"/>
-            </div>
-        </xsl:when>      
-        <xsl:when css:test=".portalMessage.success">
-            <div class="alert alert-block alert-warning">
-                <button type="button" class="close" data-dismiss="alert">×</button>
-                <h4><xsl:apply-templates select="./dt/*"/></h4>
-                <xsl:apply-templates select="./*"/>
-            </div>
-        </xsl:when>      
-        <xsl:otherwise>
+        <xsl:when css:test=".portalMessage">
             <div class="alert alert-block">
+                <xsl:choose>
+                    <xsl:when css:test=".info">
+                        <xsl:attribute name="class">alert alert-block alert-info</xsl:attribute>
+                    </xsl:when>
+                    <xsl:when css:test=".error">
+                        <xsl:attribute name="class">alert alert-block alert-error</xsl:attribute>
+                    </xsl:when>
+                    <xsl:when css:test=".success">
+                        <xsl:attribute name="class">alert alert-block alert-success</xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 <h4><xsl:apply-templates select="./dt/*"/></h4>
-                <xsl:apply-templates select="./*"/>
-            </div>  
-        </xsl:otherwise>
+                <xsl:apply-templates />
+            </div>
+        </xsl:when>
     </xsl:choose>
   </replace>
 
   <replace css:content=".configlets">
     <ul class="nav nav-list">
-      <xsl:apply-templates select="./*"/>
+      <xsl:apply-templates />
     </ul>
   </replace>
 
@@ -100,21 +90,21 @@
             <i class="icon-tags"></i><xsl:text> </xsl:text>
         </xsl:when>
       </xsl:choose>
-      <xsl:apply-templates select="./text()|./*" />
+      <xsl:apply-templates />
     </xsl:copy>
   </replace>
   <replace css:content=".icons-on #plone-contentmenu-factories .contenttype-file">
     <xsl:copy>
       <xsl:copy-of select="@*" />
       <i class="icon-file"></i><xsl:text> </xsl:text>
-      <xsl:apply-templates select="./text()|./*" />
+      <xsl:apply-templates />
     </xsl:copy>
   </replace>
   <replace css:content=".icons-on #plone-contentmenu-factories .contenttype-image">
     <xsl:copy>
       <xsl:copy-of select="@*" />
       <i class="icon-picture"></i><xsl:text> </xsl:text>
-      <xsl:apply-templates select="./text()|./*" />
+      <xsl:apply-templates />
     </xsl:copy>
   </replace>
 
