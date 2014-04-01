@@ -31,6 +31,14 @@
     <xsl:attribute name="class"><xsl:value-of select="."/> pull-right well well-large</xsl:attribute> 
   </replace>
 
+  <replace content="//ul[contains(concat(' ', normalize-space(@class), ' '), ' navTree ')]/@class">
+    <xsl:attribute name="class"><xsl:value-of select="."/> nav nav-list</xsl:attribute> 
+  </replace>
+
+  <replace content="//li[contains(concat(' ', normalize-space(@class), ' '), ' navTreeCurrentNode ')]/@class">
+    <xsl:attribute name="class"><xsl:value-of select="."/> active</xsl:attribute> 
+  </replace>
+
   <replace css:content=".portlet:not(.managedPortlet):not(.toc)">
       <xsl:if css:test=".portletHeader">
           <h2><xsl:apply-templates css:select=".portletHeader > *"/></h2>
@@ -79,10 +87,16 @@
   
   <replace css:content=".portletNavigationTree">
       <div class="well">
-          <ul class="nav nav-list navTree navTreeLevel0">
-              <xsl:if css:test=".portletHeader">
+          <ul>
+              <xsl:copy-of select="./dd/ul/@*" />
+              <xsl:attribute name="class"><xsl:value-of select="./dd/ul/@class"/> nav nav-list</xsl:attribute> 
+              <xsl:if css:test=".portletHeader:not(.hiddenStructure)">
                   <li class="list-header"><xsl:apply-templates css:select=".portletHeader > *"/></li>
                   <li class="divider"></li>
+              </xsl:if>
+              <xsl:if css:test=".portletHeader.hiddenStructure">
+                  <li class="list-header hiddenStructure"><xsl:apply-templates css:select=".portletHeader > *"/></li>
+                  <li class="divider hiddenStructure"></li>
               </xsl:if>
               <xsl:apply-templates select="./dd/ul/*"/>
               <xsl:if css:test=".portletFooter">

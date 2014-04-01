@@ -4,6 +4,12 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: apply navigation classes to each sub-level of navigation
+  in a portlet.
+  [davidjb]
+- Bootstrap: fix displaying navigation portlet heading when it shouldn't be
+  shown.
+  [davidjb]
 - Bootstrap: apply existing attributes from list items in colophon.
   [davidjb]
 - Bootstrap: import form theme handling. Port CSS-applied styling
