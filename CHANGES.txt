@@ -4,6 +4,8 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: add icons into theme for default content types.
+  [davidjb]
 - Bootstrap: apply navigation classes to each sub-level of navigation
   in a portlet.
   [davidjb]

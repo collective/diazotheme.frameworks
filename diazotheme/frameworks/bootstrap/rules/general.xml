@@ -69,4 +69,53 @@
     </div>
   </replace>
 
+
+  <!-- Content item icons -->
+  <replace content="//*[contains(@class, 'icons-on')]//*[contains(@class, 'contenttype-')]">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:choose>
+        <xsl:when css:test=".contenttype-document">
+            <i class="icon-list-alt"></i><xsl:text> </xsl:text>
+        </xsl:when>
+        <xsl:when css:test=".contenttype-event">
+            <i class="icon-calendar"></i><xsl:text> </xsl:text>
+        </xsl:when>
+        <xsl:when css:test=".contenttype-folder.navTreeItemInPath,.contenttype-folder.navTreeCurrentNode">
+            <i class="icon-folder-open"></i><xsl:text> </xsl:text>
+        </xsl:when>
+        <xsl:when css:test=".contenttype-folder">
+            <i class="icon-folder-close"></i><xsl:text> </xsl:text>
+        </xsl:when>
+        <xsl:when css:test=".contenttype-link">
+            <i class="icon-globe"></i><xsl:text> </xsl:text>
+        </xsl:when>
+        <xsl:when css:test=".contenttype-news-item">
+            <i class="icon-list"></i><xsl:text> </xsl:text>
+        </xsl:when>
+        <xsl:when css:test=".contenttype-plone-site">
+            <i class="icon-home"></i><xsl:text> </xsl:text>
+        </xsl:when>
+        <xsl:when css:test=".contenttype-collection, .contenttype-topic">
+            <i class="icon-tags"></i><xsl:text> </xsl:text>
+        </xsl:when>
+      </xsl:choose>
+      <xsl:apply-templates select="./text()|./*" />
+    </xsl:copy>
+  </replace>
+  <replace css:content=".icons-on #plone-contentmenu-factories .contenttype-file">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <i class="icon-file"></i><xsl:text> </xsl:text>
+      <xsl:apply-templates select="./text()|./*" />
+    </xsl:copy>
+  </replace>
+  <replace css:content=".icons-on #plone-contentmenu-factories .contenttype-image">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <i class="icon-picture"></i><xsl:text> </xsl:text>
+      <xsl:apply-templates select="./text()|./*" />
+    </xsl:copy>
+  </replace>
+
 </rules>
