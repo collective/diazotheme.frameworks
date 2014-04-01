@@ -36,9 +36,9 @@
                     <xsl:apply-templates select=".//dd/ul/li"/>
                 </ul>
             </div>
-          </xsl:for-each>    
+          </xsl:for-each>
           </li>
-      </ul>        
+      </ul>
   </replace>
 
   <drop css:content="#edit-bar > .contentActions"/>
