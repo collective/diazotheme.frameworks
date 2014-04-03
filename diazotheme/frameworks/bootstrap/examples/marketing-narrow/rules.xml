@@ -3,44 +3,57 @@
        xmlns:css="http://namespaces.plone.org/diazo/css"
        xmlns:xhtml="http://www.w3.org/1999/xhtml"
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"    
-       xmlns:xi="http://www.w3.org/2001/XInclude"
-       css:if-content="#visual-portal-wrapper">
+       xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <!-- AJAX: Folder listings -->
+  <rules css:if-content="body > #folderlisting-main-table">
+    <xi:include href="++theme++bootstrap-framework/rules/edit.xml"/>
+    <xi:include href="++theme++bootstrap-framework/rules/forms.xml"/>
+  </rules>
+  <!-- AJAX: Search page results -->
+    <rules css:if-content="body > #updated-search-results-number">
+    <xi:include href="++theme++bootstrap-framework/rules/general.xml"/>
+  </rules>
 
   <!-- The condition makes sure that theme is only applied when served in the 
        plone main_template. This is necessary for functional edit popups in 
        Tiny, for example. -->
-  <theme href="++theme++bootstrap-framework/examples/marketing-narrow.html" />
+  <rules css:if-content="#visual-portal-wrapper">
 
-  <!-- Head rules
-       ================================================================== -->
-  <xi:include href="++theme++bootstrap-framework/rules/head-base.xml"/>
-  <xi:include href="++theme++bootstrap-framework/rules/head-theme.xml"/>
+    <theme href="++theme++bootstrap-framework/examples/marketing-narrow.html" />
 
-  <!-- Add to the style tag -->
-  <after css:theme-children="head style">
-      .masthead .nav { margin-top: 16px; }
-  </after>
+    <!-- Head rules
+         ================================================================== -->
+    <xi:include href="++theme++bootstrap-framework/rules/head-base.xml"/>
+    <xi:include href="++theme++bootstrap-framework/rules/head-theme.xml"/>
+
+    <!-- Add to the style tag -->
+    <after css:theme-children="head style">
+        .masthead .nav { margin-top: 16px; }
+    </after>
 
 
-  <!-- Body rules
-       ================================================================== -->
-  <xi:include href="++theme++bootstrap-framework/rules/header-narrow.xml"/>
-  <xi:include href="++theme++bootstrap-framework/rules/grid.xml"/>
-  <xi:include href="++theme++bootstrap-framework/rules/columns.xml"/>
-  <xi:include href="++theme++bootstrap-framework/rules/lead-jumbotron.xml"/>
-  <xi:include href="++theme++bootstrap-framework/rules/content.xml"/>
-  <xi:include href="++theme++bootstrap-framework/rules/forms.xml"/>
-  <xi:include href="++theme++bootstrap-framework/rules/portlets.xml"/>
-  <xi:include href="++theme++bootstrap-framework/rules/no-edit.xml"/>
-  <xi:include href="++theme++bootstrap-framework/rules/footer-narrow.xml"/>
-  <xi:include href="++theme++bootstrap-framework/rules/general-narrow.xml"/>
+    <!-- Body rules
+         ================================================================== -->
+    <xi:include href="++theme++bootstrap-framework/rules/header-narrow.xml"/>
+    <xi:include href="++theme++bootstrap-framework/rules/grid.xml"/>
+    <xi:include href="++theme++bootstrap-framework/rules/columns.xml"/>
+    <xi:include href="++theme++bootstrap-framework/rules/lead-jumbotron.xml"/>
+    <xi:include href="++theme++bootstrap-framework/rules/content.xml"/>
+    <xi:include href="++theme++bootstrap-framework/rules/forms.xml"/>
+    <xi:include href="++theme++bootstrap-framework/rules/portlets.xml"/>
+    <xi:include href="++theme++bootstrap-framework/rules/no-edit.xml"/>
+    <xi:include href="++theme++bootstrap-framework/rules/footer-narrow.xml"/>
+    <xi:include href="++theme++bootstrap-framework/rules/general-narrow.xml"/>
 
-  <!-- Place the content 
-       .................................................................. -->
-  <drop css:theme-children="body"/>
-  <before css:theme-children="body" css:content-children="body"/>
-  <after css:theme-children="body">
-    <script src="{$base}/++theme++bootstrap-framework/js/bootstrap.min.js"></script>
-  </after>
+    <!-- Place the content 
+         .................................................................. -->
+    <drop css:theme-children="body"/>
+    <before css:theme-children="body" css:content-children="body"/>
+    <after css:theme-children="body">
+        <script src="{$base}/++theme++bootstrap-framework/js/bootstrap.min.js"></script>
+    </after>
+
+  </rules>
   
 </rules>

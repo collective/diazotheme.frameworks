@@ -4,6 +4,9 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: update themes with fixes for Plone-related views and
+  different AJAX views.
+  [davidjb]
 - Bootstrap: fix text mapping class for expired content.
   [davidjb]
 - Bootstrap: add icons into theme for default content types.
