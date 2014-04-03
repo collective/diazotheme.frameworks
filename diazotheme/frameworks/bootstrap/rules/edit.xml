@@ -51,10 +51,10 @@
   </replace>
 
   <!-- Rough translation of workflow state to text emphasis classes -->
-  <replace content="//*[contains(@class, 'state-published') or contains(@class, 'state-external') or contains(@class, 'state-open') or contains(@class, 'state-expired')]/@class">
+  <replace content="//*[contains(@class, 'state-published') or contains(@class, 'state-external') or contains(@class, 'state-open')]/@class">
     <xsl:attribute name="class"><xsl:value-of select="." /> text-success</xsl:attribute>
   </replace>
-  <replace content="//*[contains(@class, 'state-private') or contains(@class, 'state-closed')]/@class">
+  <replace content="//*[contains(@class, 'state-private') or contains(@class, 'state-closed') or contains(@class, 'state-expired')]/@class">
     <xsl:attribute name="class"><xsl:value-of select="." /> text-error</xsl:attribute>
   </replace>
   <replace content="//*[contains(@class, 'state-pending') or contains(@class, 'state-protected') or contains(@class, 'state-pending_external')]/@class">
