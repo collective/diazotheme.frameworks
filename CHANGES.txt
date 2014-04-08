@@ -4,6 +4,9 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: improve form layout for different checkbox/radio
+  input fields.
+  [davidjb]
 - Bootstrap: update themes with fixes for Plone-related views and
   different AJAX views.
   [davidjb]

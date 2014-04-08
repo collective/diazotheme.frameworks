@@ -39,6 +39,22 @@
     </xsl:copy>
   </replace>
 
+  <replace css:content="form .widget">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:choose>
+        <xsl:when css:test="[type='radio']">
+            <xsl:attribute name="class"><xsl:value-of select="./@class" /> radio</xsl:attribute>
+        </xsl:when>
+        <xsl:when css:test="[type='checkbox']">
+            <xsl:attribute name="class"><xsl:value-of select="./@class" /> checkbox</xsl:attribute>
+        </xsl:when>
+      </xsl:choose>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </replace>
+  <drop css:content="form .widget .value br" />
+
   <replace css:content="form .field">
     <xsl:copy>
       <xsl:copy-of select="@*" />
@@ -51,6 +67,16 @@
          </xsl:otherwise>
       </xsl:choose>
       <div class="controls">
+          <xsl:if test="not(*[@class='widget'])">
+            <xsl:choose>
+                <xsl:when css:test="[type='radio']">
+                    <xsl:attribute name="class">controls radio</xsl:attribute>
+                </xsl:when>
+                <xsl:when css:test="[type='checkbox']">
+                    <xsl:attribute name="class">controls checkbox</xsl:attribute>
+                </xsl:when>
+            </xsl:choose>
+          </xsl:if>
         <xsl:apply-templates />
       </div>
     </xsl:copy>
@@ -90,19 +116,17 @@
                   <xsl:value-of select="./@value"/>
               </button>
           </xsl:when>
-          <xsl:when css:test="[type='checkbox'],[type='radio']">
-              <xsl:copy>
-                  <xsl:copy-of select="@*" />
-                  <xsl:attribute name="class"><xsl:value-of select="./@class" /> pull-left</xsl:attribute>
-                  <xsl:if css:test=".label">
-                    <xsl:attribute name="class">pull-left</xsl:attribute>
-                  </xsl:if>
-              </xsl:copy>
-          </xsl:when>
           <xsl:when css:test="[type='text'][name$='.title'],#title">
               <xsl:copy>
                   <xsl:copy-of select="@*" />
                   <xsl:attribute name="class"><xsl:value-of select="./@class" /> input-block-level</xsl:attribute>
+                  <xsl:apply-templates />
+              </xsl:copy>
+          </xsl:when>
+          <xsl:when css:test="[class='label checkboxType']">
+              <xsl:copy>
+                  <xsl:copy-of select="@*" />
+                  <xsl:attribute name="class">checkboxType</xsl:attribute>
                   <xsl:apply-templates />
               </xsl:copy>
           </xsl:when>
