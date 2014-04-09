@@ -40,7 +40,7 @@
   </replace>
 
   <replace css:content=".configlets">
-    <ul class="nav nav-list">
+    <ul class="nav nav-list checkbox">
       <xsl:apply-templates />
     </ul>
   </replace>
