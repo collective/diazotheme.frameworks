@@ -5,8 +5,8 @@
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
        xmlns:xi="http://www.w3.org/2001/XInclude">
 
-  <!-- The condition makes sure that theme is only applied when served in the 
-       plone main_template. This is necessary for functional edit popups in 
+  <!-- The condition makes sure that theme is only applied when served in the
+       plone main_template. This is necessary for functional edit popups in
        Tiny, for example. -->
   <theme href="index.html" css:if-content="#visual-portal-wrapper"/>
 
@@ -27,5 +27,5 @@
 
   <!-- Copy over the content -->
   <replace css:theme="body" css:content="body" />
-  
+
 </rules>

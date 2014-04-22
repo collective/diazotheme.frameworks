@@ -12,5 +12,13 @@
 
   <!-- Scripts -->
   <after css:theme="title" css:content="head script"/>
-
+  <after css:theme-children="head" if="$globalnavsetting = 'onlymobile'">
+      <script type="text/javascript">var globalnavsetting = 'onlymobile';</script>
+  </after>
+  <after css:theme-children="head" if="$globalnavsetting = 'always'">
+      <script type="text/javascript">var globalnavsetting = 'always';</script>
+  </after>
+  <after css:theme-children="head" if="$globalnavsetting = 'nodesktop'">
+      <script type="text/javascript">var globalnavsetting = 'nodesktop';</script>
+  </after>
 </rules>
