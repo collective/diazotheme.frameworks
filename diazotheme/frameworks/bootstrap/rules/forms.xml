@@ -67,7 +67,7 @@
          </xsl:otherwise>
       </xsl:choose>
       <div class="controls">
-          <xsl:if test="not(*[@class='widget'])">
+          <xsl:if test="not(*[@class='widget']) and not(table)">
             <xsl:choose>
                 <xsl:when css:test="[type='radio']">
                     <xsl:attribute name="class">controls radio</xsl:attribute>
