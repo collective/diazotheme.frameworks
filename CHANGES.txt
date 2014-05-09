@@ -4,6 +4,9 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: allow Plone custom CSS to pass into themed pages. This allows
+  for theme customisation TTW for simple changes required.
+  [davidjb]
 - Bootstrap: improve form field styles for table radio listings.
   [davidjb]
 - Goldilocks: fix missing columns.xml file

@@ -31,7 +31,7 @@
   <replace css:theme="title" css:content="title" />
 
   <!-- Styles -->
-  <after css:theme-children="head" content="//head/link[@rel='stylesheet' and contains(@href, '/++resource++') or contains(@href, '/resource') or contains(@href, 'collective.js.jqueryui')]"/>
+  <after css:theme-children="head" content="//head/link[@rel='stylesheet' and contains(@href, '/++resource++') or contains(@href, '/resource') or contains(@href, 'collective.js.jqueryui') or contains(@href, 'ploneCustom')]"/>
 
   <!-- Scripts -->
   <after css:theme-children="head" css:content="head script"/>
