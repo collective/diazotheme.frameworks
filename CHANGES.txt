@@ -6,6 +6,8 @@ Changelog
 
 - Bootstrap: improve form field styles for table radio listings.
   [davidjb]
+- Goldilocks: fix missing columns.xml file
+  [laulaz]
 - Bootstrap: improve form layout for different checkbox/radio
   input fields.
   [davidjb]
