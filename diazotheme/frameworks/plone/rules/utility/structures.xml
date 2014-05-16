@@ -40,9 +40,9 @@
               <xsl:apply-templates select="../*[@class='documentDescription']"/>
           </header>
       </replace>
-      <drop css:content=".documentDescription" />
+      <drop css:content="//article/div[@id='parent-fieldname-description']" />
   </rules>
-  
+
   <replace css:content=".documentByLine">
       <footer>
           <xsl:copy-of select="./@*"/>

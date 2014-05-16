@@ -21,4 +21,8 @@
   <after css:theme-children="head" if="$globalnavsetting = 'nodesktop'">
       <script type="text/javascript">var globalnavsetting = 'nodesktop';</script>
   </after>
+  <after css:theme-children="head" if="$globalnavsetting = 'never'">
+      <script type="text/javascript">var globalnavsetting = 'never';</script>
+  </after>
+
 </rules>
