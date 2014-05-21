@@ -37,10 +37,10 @@
       <replace css:content=".documentFirstHeading">
           <header>
               <xsl:copy-of select="."/>
-              <xsl:apply-templates select="../*[@class='documentDescription']"/>
+              <xsl:copy-of select="../*[@class='documentDescription']"/>
           </header>
       </replace>
-      <drop css:content="//article/div[@id='parent-fieldname-description']" />
+      <drop css:content=".documentDescription" />
   </rules>
 
   <replace css:content=".documentByLine">
