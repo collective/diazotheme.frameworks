@@ -45,13 +45,6 @@
       <drop css:content=".documentByLine" />
   </rules>
 
-  <!--replace css:content=".documentByLine">
-      <footer>
-          <xsl:copy-of select="./@*"/>
-          <xsl:apply-templates select="./*"/>
-      </footer>
-  </replace-->
-
   <replace css:content="#content">
       <article>
           <xsl:copy-of select="./@*"/>
