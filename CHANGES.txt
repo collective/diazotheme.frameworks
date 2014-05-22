@@ -25,6 +25,13 @@ Changelog
   [luca-bellenghi]
 - Plone: Fix globalnavigation menu (duplicated ids)
   [luca-bellenghi]
+- Bootstrap: allow Plone custom CSS to pass into themed pages. This allows
+  for theme customisation TTW for simple changes required.
+  [davidjb]
+- Bootstrap: improve form field styles for table radio listings.
+  [davidjb]
+- Goldilocks: fix missing columns.xml file
+  [laulaz]
 - Bootstrap: improve form layout for different checkbox/radio
   input fields.
   [davidjb]

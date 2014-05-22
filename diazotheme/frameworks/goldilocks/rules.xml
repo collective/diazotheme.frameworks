@@ -16,8 +16,6 @@
 
     <!-- Body rules
          ================================================================== -->
-    <xi:include href="++theme++goldilocks-framework/rules/columns.xml"/>
-
     
     <!-- Change the logo in content and the copy the portal-top children -->
     <xi:include href="++theme++plone/rules/logo/default-32.xml"/>
