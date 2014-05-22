@@ -10,6 +10,12 @@
   <!-- Pull in Plone Meta -->
   <before css:theme="title" css:content="meta" />
 
+  <!-- Change meta viewport to fix zoom on mobile low resolution display-->
+  <drop content="/html/head/meta[@name='viewport']"/>
+  <before css:theme-children="head">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+  </before>
+
   <!-- Base tag -->
   <before css:theme="title" css:content="base"/>
 

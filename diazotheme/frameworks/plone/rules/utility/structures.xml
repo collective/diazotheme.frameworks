@@ -37,18 +37,13 @@
       <replace css:content=".documentFirstHeading">
           <header>
               <xsl:copy-of select="."/>
-              <xsl:apply-templates select="../*[@class='documentDescription']"/>
+              <xsl:copy-of select="../div/div[@class='documentByLine']" />
+              <xsl:copy-of select="../*[@class='documentDescription']"/>
           </header>
       </replace>
       <drop css:content=".documentDescription" />
+      <drop css:content=".documentByLine" />
   </rules>
-  
-  <replace css:content=".documentByLine">
-      <footer>
-          <xsl:copy-of select="./@*"/>
-          <xsl:apply-templates select="./*"/>
-      </footer>
-  </replace>
 
   <replace css:content="#content">
       <article>

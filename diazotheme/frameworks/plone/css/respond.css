@@ -21,6 +21,7 @@
     body {
         padding: 0 .5em;
     }
+
 }
 
 @media screen and (min-width: 600px) and (max-width: 800px) {
@@ -34,6 +35,7 @@
         width: 33%;
         float: right;
     }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -48,16 +50,63 @@
     }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 640px) {
     body { min-width: 215px; }
+
     #portal-searchbox form, #searchGadget, .LSBox {
         width: 90%;
         margin: 1em auto;
         float: none;
     }
-    #portal-header > div, 
+    #portal-header > div,
     #portal-header > a {
         float: none;
+    }
+
+    #portal-column-content,
+    #portal-column-one,
+    #portal-column-two
+    {
+        margin-left:0px;
+    }
+
+    #LSResult{
+        position:static;
+        margin:0;
+    }
+    #LSResult li.LSRow{
+        width:auto;
+    }
+    #portal-searchbox{
+        text-align:left;
+        float: none;
+        display: block;
+        position: static;
+    }
+    #portal-searchbox form{
+        white-space:inherit;
+    }
+
+    body.template-search input.searchPage{
+        font-size: 100% !important;
+    }
+    #portal-logo{
+        float: none;
+        position: static;
+        margin: 1em 0em 0em 1em;
+    }
+    div.overlay{
+        width:auto !important;
+        left:0 !important;
+    }
+    body.template-newsitem_view .newsImageContainer{
+        float:none !important;
+    }
+    div.overlay-contact .field input[type="text"][size]{
+         width:95% !important;
+    }
+    .field input[type="text"] {
+        width: auto;
     }
 }
 
@@ -85,8 +134,11 @@
     color: #205C90;
 }
 ul li #toggleNav {
-    text-indent: -2000em;
     position: relative;
+}
+ul li #toggleNav i.hiddenStructure{
+    display:inline-block;
+    text-indent: -2000em;
 }
 #toggleNav span {
     position: absolute;
@@ -124,4 +176,28 @@ ul li #toggleNav {
 }
 #navWrapper.dropped {
     overflow: visible;
+}
+
+#LSResult{
+    z-index:1;
+}
+
+div.overlay{
+   font-size:80% !important;
+}
+
+img{
+    max-width:98%;
+    height:auto;
+}
+.table-responsive{
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: scrol;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+}
+
+.LSBox input{
+    margin-right:3px;
 }

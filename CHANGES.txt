@@ -3,7 +3,28 @@ Changelog
 
 1.0 (unreleased)
 ------------------
-
+- Plone: fix xpath expression to work correctly with description and document by line
+- Plone: change xpath expression to correctly show description
+- Plone: Change the viewport meta tag to set zoom correctly on low resolution
+  mobile devices.
+  [luca-bellenghi]
+- Plone: Fix portal-column-content, portal-column-one and portal-column-two
+  margin left in mobile low resolution.
+  [luca-bellenghi]
+- Plone: Fix global nav wrapper height calculation; we had problem due to
+  different globalnav height  when rotating device.
+  [luca-bellenghi]
+- Plone: Fix live search results width (too large on small resolution devices).
+- Plone: Fix z-index problem with live search results and menu bar.
+  [luca-bellenghi]
+- Plone: Made responsive tables in “text” field.
+  [luca-bellenghi]
+- Plone: Made responsive images.
+  [luca-bellenghi]
+- Plone: Fix login overlay dimension
+  [luca-bellenghi]
+- Plone: Fix globalnavigation menu (duplicated ids)
+  [luca-bellenghi]
 - Bootstrap: allow Plone custom CSS to pass into themed pages. This allows
   for theme customisation TTW for simple changes required.
   [davidjb]
@@ -50,7 +71,7 @@ Changelog
   in themed pages.
   [davidjb]
 - Bootstrap: allow ++resource++ CSS from Plone to be included in themed
-  pages.  This allows for most non-default CSS (such as add-ons) to be 
+  pages.  This allows for most non-default CSS (such as add-ons) to be
   included in pages.
   [davidjb]
 - Bootstrap: prevent search dropdown menu from closing on click.
@@ -71,15 +92,15 @@ Changelog
 - Bootstrap: add classes for categories (tags) for content.
   [davidjb]
 - Bootstrap: apply pagination classes for listing bars (such as for folders or
-  search results). 
+  search results).
   [davidjb]
 - Bootstrap: Modify all CSS and JS resources to use Plone's ``base`` variable,
   supplied by plone.app.theming. Without this, relative URLs result in the
   same resources being loaded on different URLs for every page request.
   [davidjb]
-- Bootstrap: apply columnar classes for user dashboards. 
+- Bootstrap: apply columnar classes for user dashboards.
   [davidjb]
-- Bootstrap: remove extraneous username from the personal tools menu. 
+- Bootstrap: remove extraneous username from the personal tools menu.
   [davidjb]
 - Bootstrap: expand selectors for different button types.
   [davidjb]
@@ -89,12 +110,12 @@ Changelog
 - Bootstrap: tidy form field markup to make fields clear, especially when
   errors have occurred.
   [davidjb]
-- Bootstrap: ensure accordions are constructed in such a way that 
+- Bootstrap: ensure accordions are constructed in such a way that
   the ``parent`` data attribute is populated for nested elements. Previously,
   this would only function if the structure was ``form > fieldset``.
   [davidjb]
 - Bootstrap: translate workflow states into textual emphasis classes.
-  [davidjb] 
+  [davidjb]
 - Bootstrap: style album/thumbnail views for folders with Bootstrap markup.
   [davidjb]
 - Bootstrap: style portlet management options with Bootstrap markup.
@@ -134,10 +155,10 @@ Changelog
   [davidjb]
 - Update Bootstrap to 2.3.2 (and add upgrade instructions).
   [davidjb]
-- Ensure Bootstrap and Foundation buttons have value, name, 
+- Ensure Bootstrap and Foundation buttons have value, name,
   and other attributes copied to ensure form actions can take place.
   [davidjb]
-   
+
 
 1.0dev (unreleased)
 ------------------

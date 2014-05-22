@@ -6,6 +6,7 @@
 
     <after css:theme-children="head">
         <link rel="stylesheet" href="/++theme++plone/css/respond.css"/>
+        <script src="/++theme++plone/js/devicedetection.min.js"></script>
         <script src="/++theme++plone/js/respond.min.js"></script>
     </after>
 
