@@ -52,12 +52,6 @@
       </article>
   </replace>
 
-  <replace css:content="#content">
-      <article>
-          <xsl:copy-of select="./@*"/>
-          <xsl:apply-templates select="./*"/>
-      </article>
-  </replace>
   <replace css:content="#portal-column-one, #portal-column-two">
       <div>
           <xsl:copy-of select="./@*"/>
