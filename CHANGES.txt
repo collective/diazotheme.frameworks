@@ -3,6 +3,7 @@ Changelog
 
 1.0 (unreleased)
 ------------------
+- Plone: fix keywords not displaying [laulaz]
 - Plone: fix xpath expression to work correctly with description and document by line
 - Plone: change xpath expression to correctly show description
 - Plone: Change the viewport meta tag to set zoom correctly on low resolution
