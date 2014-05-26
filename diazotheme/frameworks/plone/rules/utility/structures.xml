@@ -37,12 +37,12 @@
       <replace css:content=".documentFirstHeading">
           <header>
               <xsl:copy-of select="."/>
-              <xsl:copy-of select="../div/div[@class='documentByLine']" />
+              <xsl:copy-of select="../div/div[@id='plone-document-byline']" />
               <xsl:copy-of select="../*[@class='documentDescription']"/>
           </header>
       </replace>
       <drop css:content=".documentDescription" />
-      <drop css:content=".documentByLine" />
+      <drop css:content="#plone-document-byline" />
   </rules>
 
   <replace css:content="#content">
@@ -52,12 +52,6 @@
       </article>
   </replace>
 
-  <replace css:content="#content">
-      <article>
-          <xsl:copy-of select="./@*"/>
-          <xsl:apply-templates select="./*"/>
-      </article>
-  </replace>
   <replace css:content="#portal-column-one, #portal-column-two">
       <div>
           <xsl:copy-of select="./@*"/>
