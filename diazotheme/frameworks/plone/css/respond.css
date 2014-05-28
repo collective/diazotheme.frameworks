@@ -39,24 +39,15 @@
 }
 
 @media screen and (max-width: 600px) {
-    /*    body { min-width: 25em; }*/
-    .LSBox .searchButton {
-        display: none;
-    }
-    #portal-logo {
-        display: block;
-        margin-top: 0;
-        float: left;
-    }
-}
-
-@media screen and (max-width: 640px) {
     body { min-width: 215px; }
 
     #portal-searchbox form, #searchGadget, .LSBox {
         width: 90%;
         margin: 1em auto;
         float: none;
+    }
+    .LSBox .searchButton {
+        display: none;
     }
     #portal-header > div,
     #portal-header > a {
@@ -95,7 +86,12 @@
         position: static;
         margin: 1em 0em 0em 1em;
     }
-    div.overlay{
+/*    #portal-logo {
+        display: block;
+        margin-top: 0;
+        float: left;
+    }
+*/    div.overlay{
         width:auto !important;
         left:0 !important;
     }
@@ -200,4 +196,13 @@ img{
 
 .LSBox input{
     margin-right:3px;
+}
+
+
+/*
+IE 8 fix
+*/
+
+.ie8 #portal-logo {
+    display: block;
 }
