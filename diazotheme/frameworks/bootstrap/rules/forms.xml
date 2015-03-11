@@ -14,7 +14,11 @@
   </replace>
 
   <replace css:content="span.required">
-    <span class="required text-info">(Required)</span>
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:attribute name="class"><xsl:value-of select="./@class" /> text-info</xsl:attribute>
+      <xsl:apply-templates />■
+    </xsl:copy>
   </replace>
 
   <replace content="//*[contains(@class, 'fieldRequired')]/@class">

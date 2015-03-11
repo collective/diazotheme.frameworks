@@ -3,6 +3,11 @@ Changelog
 
 1.0 (unreleased)
 ------------------
+
+
+- Bootstrap: only a text class add to ``span.required`` elements. Previously,
+  form fields wrapped in such an element were removed.
+  [davidjb]
 - Plone: fix keywords not displaying [laulaz]
 - Plone: fix xpath expression to work correctly with description and document by line
 - Plone: change xpath expression to correctly show description
