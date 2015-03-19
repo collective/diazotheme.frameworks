@@ -11,17 +11,17 @@
     <theme href="++theme++goldilocks-framework/index.html"
            css:if-content="#visual-portal-wrapper"/>
 
-    <xi:include href="++theme++goldilocks-framework/rules/head-base.xml"/>
-    <xi:include href="++theme++goldilocks-framework/rules/head-theme.xml"/>
+    <xi:include href="/++theme++goldilocks-framework/rules/head-base.xml"/>
+    <xi:include href="/++theme++goldilocks-framework/rules/head-theme.xml"/>
 
     <!-- Body rules
          ================================================================== -->
     
     <!-- Change the logo in content and the copy the portal-top children -->
-    <xi:include href="++theme++plone/rules/logo/default-32.xml"/>
+    <xi:include href="/++theme++plone/rules/logo/default-32.xml"/>
 
     <!-- Strip edit fixtures -->
-    <xi:include href="++theme++plone/rules/utility/clean.xml"/>
+    <xi:include href="/++theme++plone/rules/utility/clean.xml"/>
 
     <!-- Move the content body over to the theme side -->
     <replace css:theme="body" css:content="body"/>

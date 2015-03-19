@@ -11,24 +11,24 @@
   <theme href="++theme++foundation-framework/index.html" 
          css:if-content="#visual-portal-wrapper"/>
 
-  <xi:include href="++theme++foundation-framework/rules/head-base.xml"/>
-  <xi:include href="++theme++foundation-framework/examples/rules/theme.xml"/>
+  <xi:include href="/++theme++foundation-framework/rules/head-base.xml"/>
+  <xi:include href="/++theme++foundation-framework/examples/rules/theme.xml"/>
   <after css:theme="link[href*='foundation.min.css']">
       <link href="++theme++foundstyles-evergreen/app.css" rel="stylesheet"/>
   </after>
 
   <!-- Body rules
        ================================================================== -->
-  <xi:include href="++theme++foundation-framework/rules/grid.xml"/>
-  <xi:include href="++theme++foundation-framework/rules/header.xml"/>
-  <xi:include href="++theme++foundation-framework/rules/columns.xml"/>
-  <xi:include href="++theme++foundation-framework/rules/portlets.xml"/>
-  <xi:include href="++theme++foundation-framework/examples/rules/lead.xml"/>
-  <xi:include href="++theme++foundation-framework/rules/content.xml"/>
-  <xi:include href="++theme++foundation-framework/rules/footer.xml"/>
+  <xi:include href="/++theme++foundation-framework/rules/grid.xml"/>
+  <xi:include href="/++theme++foundation-framework/rules/header.xml"/>
+  <xi:include href="/++theme++foundation-framework/rules/columns.xml"/>
+  <xi:include href="/++theme++foundation-framework/rules/portlets.xml"/>
+  <xi:include href="/++theme++foundation-framework/examples/rules/lead.xml"/>
+  <xi:include href="/++theme++foundation-framework/rules/content.xml"/>
+  <xi:include href="/++theme++foundation-framework/rules/footer.xml"/>
 
   <!-- Strip edit fixtures -->
-  <xi:include href="++theme++plone/rules/utility/clean.xml"/>
+  <xi:include href="/++theme++plone/rules/utility/clean.xml"/>
 
   <!-- Copy over the content -->
   <replace css:theme="body" css:content="body" />

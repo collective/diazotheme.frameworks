@@ -12,7 +12,7 @@
 
   <!-- Head rules
        ================================================================== --> 
-  <xi:include href="++theme++kube-framework/rules/head.xml"/> 
+  <xi:include href="/++theme++kube-framework/rules/head.xml"/> 
 
   <replace css:theme="link[href*='demo.css']">
     <link rel="stylesheet" href="/++theme++kube-demo/css/demo.css" media="all" />
@@ -40,13 +40,13 @@
        ================================================================== -->
 
   <!-- Change the logo in content and the copy the portal-top children -->
-  <xi:include href="++theme++plone/rules/icon/black-56.xml"/>
-  <xi:include href="++theme++plone/rules/utility/clean.xml"/> 
+  <xi:include href="/++theme++plone/rules/icon/black-56.xml"/>
+  <xi:include href="/++theme++plone/rules/utility/clean.xml"/> 
 
-  <xi:include href="++theme++kube-framework/rules/structures.xml"/> 
-  <xi:include href="++theme++kube-framework/rules/content.xml"/> 
-  <xi:include href="++theme++kube-framework/rules/forms.xml"/>
-  <xi:include href="++theme++kube-framework/rules/portlets.xml"/>
+  <xi:include href="/++theme++kube-framework/rules/structures.xml"/> 
+  <xi:include href="/++theme++kube-framework/rules/content.xml"/> 
+  <xi:include href="/++theme++kube-framework/rules/forms.xml"/>
+  <xi:include href="/++theme++kube-framework/rules/portlets.xml"/>
 
   <!-- Copy over the content -->
   <replace css:theme="#header h1" css:content="#portal-logo" />

@@ -68,6 +68,6 @@
       </div>
     </div>
   </replace>
-  <xi:include href="++theme++plone/rules/logo/white-48.xml"/>
+  <xi:include href="/++theme++plone/rules/logo/white-48.xml"/>
 
 </rules>

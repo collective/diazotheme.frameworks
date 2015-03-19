@@ -7,12 +7,12 @@
 
   <!-- AJAX: Folder listings -->
   <rules css:if-content="body > #folderlisting-main-table">
-    <xi:include href="++theme++bootstrap-framework/rules/edit.xml"/>
-    <xi:include href="++theme++bootstrap-framework/rules/forms.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/edit.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/forms.xml"/>
   </rules>
   <!-- AJAX: Search page results -->
     <rules css:if-content="body > #updated-search-results-number">
-    <xi:include href="++theme++bootstrap-framework/rules/general.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/general.xml"/>
   </rules>
 
   <!-- The condition makes sure that theme is only applied when served in the 
@@ -24,21 +24,21 @@
 
     <!-- Head rules
          ================================================================== -->
-    <xi:include href="++theme++bootstrap-framework/rules/head-base.xml"/>
-    <xi:include href="++theme++bootstrap-framework/rules/head-theme.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/head-base.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/head-theme.xml"/>
 
     <!-- Body rules
          ================================================================== -->
-    <xi:include href="++theme++bootstrap-framework/rules/header-inverse.xml"/>
-    <xi:include href="++theme++bootstrap-framework/rules/grid.xml"/>
-    <xi:include href="++theme++bootstrap-framework/rules/columns.xml"/>
-    <xi:include href="++theme++bootstrap-framework/rules/lead.xml"/>
-    <xi:include href="++theme++bootstrap-framework/rules/content.xml"/>
-    <xi:include href="++theme++bootstrap-framework/rules/forms.xml"/>
-    <xi:include href="++theme++bootstrap-framework/rules/portlets.xml"/>
-    <xi:include href="++theme++bootstrap-framework/rules/edit.xml"/>
-    <xi:include href="++theme++bootstrap-framework/rules/footer.xml"/>
-    <xi:include href="++theme++bootstrap-framework/rules/general.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/header-inverse.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/grid.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/columns.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/lead.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/content.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/forms.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/portlets.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/edit.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/footer.xml"/>
+    <xi:include href="/++theme++bootstrap-framework/rules/general.xml"/>
 
     <!-- Place the content 
          .................................................................. -->

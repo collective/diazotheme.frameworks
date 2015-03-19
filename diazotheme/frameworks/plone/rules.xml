@@ -12,18 +12,18 @@
 
   <!-- Head rules
        ================================================================== -->
-  <xi:include href="++theme++plone/rules/head/ie-classes.xml"/>
-  <xi:include href="++theme++plone/rules/head/base.xml"/>
-  <xi:include href="++theme++plone/rules/head/theme.xml"/>
-  <xi:include href="++theme++plone/rules/head/icons.xml"/>
-  <xi:include href="++theme++plone/rules/utility/responsify.xml"/>
+  <xi:include href="/++theme++plone/rules/head/ie-classes.xml"/>
+  <xi:include href="/++theme++plone/rules/head/base.xml"/>
+  <xi:include href="/++theme++plone/rules/head/theme.xml"/>
+  <xi:include href="/++theme++plone/rules/head/icons.xml"/>
+  <xi:include href="/++theme++plone/rules/utility/responsify.xml"/>
 
   <!-- Body rules
        ================================================================== -->
 
   <!-- Change the logo in content and the copy the portal-top children -->
-  <xi:include href="++theme++plone/rules/logo/default-56.xml"/>
-  <xi:include href="++theme++plone/rules/utility/structures.xml"/>
+  <xi:include href="/++theme++plone/rules/logo/default-56.xml"/>
+  <xi:include href="/++theme++plone/rules/utility/structures.xml"/>
 
   <!-- Copy over the content -->
   <replace css:theme="body" css:content="body" />
