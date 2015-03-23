@@ -4,6 +4,8 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Bootstrap: convert ``submit-widget`` input buttons into primary buttons.
+  [davidjb]
 - Fix randomly broken html due to subrequest on relative paths (returning None)
   [laulaz]
 - Bootstrap: only a text class add to ``span.required`` elements. Previously,

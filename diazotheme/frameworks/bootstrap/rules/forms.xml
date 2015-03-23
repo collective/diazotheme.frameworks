@@ -107,7 +107,7 @@
                       <xsl:when css:test=".delete, .destructive, [value='Delete']">
                           <xsl:attribute name="class"><xsl:value-of select="./@class" /> btn btn-danger</xsl:attribute>
                       </xsl:when>
-                      <xsl:when css:test=".searchButton, .context">
+                      <xsl:when css:test=".searchButton, .context, .submit-widget">
                           <xsl:attribute name="class"><xsl:value-of select="./@class" /> btn btn-primary</xsl:attribute>
                       </xsl:when>
                       <xsl:when css:test=".standalone">
