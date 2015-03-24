@@ -5,7 +5,7 @@
          xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <!-- Forms -->
-  <replace css:content=".formHelp">
+  <replace css:content=".formHelp,.fieldErrorBox">
     <xsl:copy>
       <xsl:copy-of select="@*" />
       <xsl:attribute name="class"><xsl:value-of select="./@class" /> help-block</xsl:attribute>
