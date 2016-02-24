@@ -50,7 +50,6 @@
   <replace css:theme="link[rel='shortcut icon']" css:content="link[rel='shortcut icon']" />
   <after css:theme="link[rel='shortcut icon']" css:content="link[rel='apple-touch-icon']" />
   <drop css:theme="link[rel*='apple-']"/>
-
-
+  <after css:theme-children="head" content="//head/link[@rel='search' or @rel='alternate']"/>
 
 </rules>
