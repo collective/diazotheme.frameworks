@@ -4,6 +4,8 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Fixed /++theme++goldilocks-black/js/libs/modernizr-1.7.min.js 404 NotFound error
+  [macagua]
 - Updated the 'Kube Start' preview image file
   [macagua]
 - Updated the title and description for diazo manifest files
