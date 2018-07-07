@@ -4,6 +4,8 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Updated the 'Kube Start' preview image file
+  [macagua]
 - Updated the title and description for diazo manifest files
   [macagua]
 - Fixed http://html5shiv.googlecode.com/svn/trunk/html5.js 404 NotFound
