@@ -4,6 +4,8 @@ Changelog
 1.0 (unreleased)
 ------------------
 
+- Fixed http://html5shiv.googlecode.com/svn/trunk/html5.js 404 NotFound
+  [macagua]
 - Plone: Fix <style> / <link> order mixing
   [laulaz]
 - Bootstrap: handle error fields for z3cforms.
