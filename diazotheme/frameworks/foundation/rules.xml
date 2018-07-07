@@ -18,7 +18,7 @@
        ================================================================== -->
   <xi:include href="/++theme++foundation-framework/rules/grid.xml"/>
   <xi:include href="/++theme++foundation-framework/rules/header.xml"/>
-  <xi:include href="/++theme++plone/rules/logo/white-48.xml"/>
+  <!-- <xi:include href="/++theme++plone/rules/logo/white-48.xml"/> -->
   <xi:include href="/++theme++foundation-framework/rules/columns.xml"/>
   <xi:include href="/++theme++foundation-framework/rules/portlets.xml"/>
   <xi:include href="/++theme++foundation-framework/rules/lead.xml"/>
