@@ -9,7 +9,4 @@ The framework files are unpacked in:
 - img
 - js
 
-
-
-
 http://twitter.github.com/bootstrap
