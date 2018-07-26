@@ -14,7 +14,7 @@ structures to the plone sunburst theme. It also contains a lot of utilities,
 like different colors and sizes of the plone logo and icons, and more.
 
 This package provides diazo themes based on many *CSS framework* using the **theming** and 
-**packaging** features available for create Diazo_ theme using `plone.app.theming`_.
+**packaging** features available for create `Diazo`_ theme using `plone.app.theming`_.
 
 ``diazotheme.frameworks`` package contains the following css framework implementations: 
 
@@ -511,10 +511,10 @@ Amazing contributions
 You can find an updated list of package contributors on https://github.com/collective/diazotheme.frameworks/contributors
 
 .. _`Twitter Bootstrap CSS framework`: http://twitter.github.io/
+.. _`Diazo`: http://diazo.org
+.. _`plone.app.theming`: https://pypi.org/project/plone.app.theming/
 .. _`Zurb Foundation CSS framework`: http://foundation.zurb.com/
 .. _`Goldilocks Approach CSS framework`: http://goldilocksapproach.com/
 .. _`Kube CSS framework`: http://imperavi.com/kube/
 .. _`diazoframework.frameworks`: https://github.com/TH-code/diazoframework.frameworks
 .. _`diazotheme.frameworks`: https://github.com/collective/diazotheme.frameworks
-.. _`Diazo`: http://diazo.org
-.. _`plone.app.theming`: https://pypi.org/project/plone.app.theming/
